@@ -5,6 +5,9 @@
   "repository": "https://github.com/explicity/merkury-dashboard.git",
   "author": "Olya Yakymovych <msolya@outlook.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
