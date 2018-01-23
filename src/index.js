@@ -1,9 +1,10 @@
+import './styles/main.scss';
 import { AppContainer } from 'react-hot-loader';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App';
+import Login from './components/Login';
 
 const render = Component =>
   ReactDOM.render(
@@ -13,11 +14,11 @@ const render = Component =>
     document.getElementById('root')
   );
 
-render(App);
+render(Login);
 
 if (module.hot) {
-   module.hot.accept('./components/App', () => {
-    const NextApp =  require('./components/App').default;
+   module.hot.accept('./components/Login', () => {
+    const NextApp =  require('./components/Login').default;
     render(NextApp)
   });
 }

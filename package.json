@@ -6,13 +6,20 @@
   "author": "Olya Yakymovych <msolya@outlook.com>",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server"
+    "build": "webpack",
+    "start": "webpack-dev-server",
+    "watch": "webpack-dev-server --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "bootstrap": "4.0.0-beta.3",
+    "node-sass": "^4.7.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-prop-types": "^0.4.0",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "reactstrap": "^5.0.0-alpha.4",
+    "sass-loader": "^6.0.6"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
