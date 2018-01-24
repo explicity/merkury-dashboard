@@ -4,7 +4,7 @@ import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import Login from './components/Login';
+import Signup from './components/Signup';
 
 const render = Component =>
   ReactDOM.render(
@@ -14,11 +14,11 @@ const render = Component =>
     document.getElementById('root')
   );
 
-render(Login);
+render(Signup);
 
 if (module.hot) {
-   module.hot.accept('./components/Login', () => {
-    const NextApp =  require('./components/Login').default;
+   module.hot.accept('./components/Signup', () => {
+    const NextApp =  require('./components/Signup').default;
     render(NextApp)
   });
 }

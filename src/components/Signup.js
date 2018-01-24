@@ -1,9 +1,11 @@
 import React,  { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
+import Login from './signup-page/Login.js';
+
 import Logo from './../../public/img/logo.png';
  
-export default class Login extends Component {
+export default class Signup extends Component {
   constructor(props) {
     super(props);
 
@@ -22,7 +24,7 @@ export default class Login extends Component {
   }
   render() {
     return (
-      <div className="login-section">
+      <div className="signup-section">
          <div className="inner">
             <div className="inner-header">
               <h1>
@@ -51,10 +53,9 @@ export default class Login extends Component {
               </Nav>
             </div>
             <TabContent activeTab={this.state.activeTab}>
-              <TabPane tabId="1">
+             <TabPane tabId="1">
               </TabPane>
-              <TabPane tabId="2">
-              </TabPane>
+              <Login />
             </TabContent>
         </div>
       </div>
