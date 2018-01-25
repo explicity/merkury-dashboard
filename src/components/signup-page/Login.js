@@ -11,14 +11,14 @@ export default class Login extends Component {
 				<Form>
 			        <FormGroup>
 			          <span><i className="fa fa-user-o fa-fw fa-lg" aria-hidden="true"></i></span>	
-			          <Label for="username" hidden>Username</Label>
-			          <Input name="username" id="username" placeholder="Username"/>
+			          <Label for="login-username" hidden>Username</Label>
+			          <Input name="username" id="login-username" placeholder="Username"/>
 			        </FormGroup>
 			        {' '}
 			        <FormGroup> 
 			          <span><i className="fa fa-lock fa-fw fa-lg" aria-hidden="true"></i></span>
-			          <Label for="examplePassword" hidden>Password</Label>
-			          <Input type="password" name="password" id="examplePassword" placeholder="Password"/>
+			          <Label for="login-password" hidden>Password</Label>
+			          <Input type="password" name="login-password" id="examplePassword" placeholder="Password"/>
 			        </FormGroup>
 			        {' '}
 			        <Button className="hvr-icon-forward">Enter</Button>

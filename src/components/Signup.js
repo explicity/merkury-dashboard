@@ -2,6 +2,7 @@ import React,  { Component } from 'react';
 import { TabContent, TabPane, Nav, NavItem, NavLink, Card, Button, CardTitle, CardText, Row, Col } from 'reactstrap';
 
 import Login from './signup-page/Login.js';
+import Register from './signup-page/Register.js';
 
 import Logo from './../../public/img/logo.png';
  
@@ -53,8 +54,7 @@ export default class Signup extends Component {
               </Nav>
             </div>
             <TabContent activeTab={this.state.activeTab}>
-             <TabPane tabId="1">
-              </TabPane>
+              <Register />
               <Login />
             </TabContent>
         </div>
