@@ -26,14 +26,10 @@ module.exports = {
           loader: 'style-loader!css-loader!sass-loader'
       },
       
-      {
-        test: /\.(png|jpg)$/,
-        loader: 'url-loader'
-      },
-                  {
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
-                loader: 'file?name=public/fonts/[name].[ext]'
-            }
+
+
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
+
     ]
   },
 

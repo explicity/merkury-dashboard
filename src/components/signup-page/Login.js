@@ -5,18 +5,20 @@ export default class Login extends Component {
 	render() {
 		return (
 		  <TabPane tabId="2">
-		  	<div className="container tab-login">
-		  		<h2 className="tab-login-title">Welcome <span>back!</span></h2>
+		  	<div className="container tab-section">
+		  		<h2 className="tab-section-title">Welcome <span>back!</span></h2>
 
 				<Form>
 			        <FormGroup>
+			          <span><i className="fa fa-user-o fa-fw fa-lg" aria-hidden="true"></i></span>	
 			          <Label for="username" hidden>Username</Label>
-			          <Input name="username" id="username" placeholder="Username" />
+			          <Input name="username" id="username" placeholder="Username"/>
 			        </FormGroup>
 			        {' '}
-			        <FormGroup>
+			        <FormGroup> 
+			          <span><i className="fa fa-lock fa-fw fa-lg" aria-hidden="true"></i></span>
 			          <Label for="examplePassword" hidden>Password</Label>
-			          <Input type="password" name="password" id="examplePassword" placeholder="Password" />
+			          <Input type="password" name="password" id="examplePassword" placeholder="Password"/>
 			        </FormGroup>
 			        {' '}
 			        <Button className="hvr-icon-forward">Enter</Button>
