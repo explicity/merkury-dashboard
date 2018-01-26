@@ -1,8 +1,37 @@
 import React,  { Component } from 'react';
 import { TabPane, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
+
 export default class Register extends Component {
+	
+	
 	render() {
+			let usersArray = []	;
+
+			if (JSON.parse(localStorage.usersRecord) != "" ) {
+				usersArray = JSON.parse(localStorage.usersRecord);
+			}
+
+		    function onRegisterPressed() {
+		      const userObj = {
+		        email: document.getElementById("register-email").value,
+		        username: document.getElementById("register-username").value,
+		        password: document.getElementById("register-password").value, 
+		        number: document.getElementById("register-number").value
+		      };
+
+		      usersArray.push(userObj);
+
+		      localStorage.usersRecord = JSON.stringify(usersArray);
+
+		      console.log(localStorage.usersRecord);
+
+		      document.getElementById("register-email").value = "";
+		      document.getElementById("register-username").value = "";
+		      document.getElementById("register-password").value = "";
+		      document.getElementById("register-number").value = "";
+    		}
+
 		return (
 		  <TabPane tabId="1">
 		  	<div className="container tab-section">
@@ -31,7 +60,7 @@ export default class Register extends Component {
 			          <Input type="tel" name="phone-number" id="register-number" placeholder="Phone number" />
 			        </FormGroup>
 			        {' '}
-			        <Button className="hvr-icon-forward">Sign up</Button>
+			        <Button className="hvr-icon-forward" onClick={onRegisterPressed}>Sign up</Button>
 			     </Form>
 		  	</div>
           </TabPane>

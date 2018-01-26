@@ -29,7 +29,7 @@ export default class Signup extends Component {
          <div className="inner">
             <div className="inner-header">
               <h1>
-                <a href="" className="inner-header-logo">
+                <a href="/" className="inner-header-logo">
                   <img src={Logo} alt="logo-icon" style={{width: 30, height: 30}} />
                   <span>Merkury</span>
                 </a>                        
