@@ -23,17 +23,22 @@ export default class Signup extends Component {
       });
     }
   }
+  
   render() {
     return (
       <div className="signup-section">
          <div className="inner">
             <div className="inner-header">
-              <h1>
-                <a href="/" className="inner-header-logo">
-                  <img src={Logo} alt="logo-icon" style={{width: 30, height: 30}} />
-                  <span>Merkury</span>
-                </a>                        
-              </h1>
+
+              <header className="brand">
+                  <h1>
+                    <a href="/" className="brand-logo">
+                      <img src={Logo} alt="logo-icon" style={{width: 30, height: 30}} />
+                      <span>Merkury</span>
+                    </a>                        
+                  </h1>
+              </header>
+
               <Nav tabs>
                 <NavItem>
                   <NavLink
