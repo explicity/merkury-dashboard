@@ -1,7 +1,7 @@
-import React,  { Component } from 'react';
+import React, { Component } from "react";
 
-import Sidebar from './menus/Sidebar.js';
-import Navigation from './menus/Navigation.js';
+import Sidebar from "./menus/Sidebar.js";
+import Navigation from "./menus/Navigation.js";
 
 export default class Menus extends Component {
 	render() {
@@ -10,6 +10,6 @@ export default class Menus extends Component {
 				<Navigation />
 				<Sidebar />
 			</div>
-		)
+		);
 	}
 }

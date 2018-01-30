@@ -1,14 +1,14 @@
-import React,  { Component } from 'react';
+import React, { Component } from "react";
 import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch,
-  Redirect
-} from 'react-router-dom';
+	BrowserRouter as Router,
+	Route,
+	Link,
+	Switch,
+	Redirect
+} from "react-router-dom";
 
-import Signup from './components/Signup.js';
-import Menus from './components/Menus.js';
+import Signup from "./components/Signup.js";
+import Menus from "./components/Menus.js";
 
 export default class Routes extends Component {
 	render() {
@@ -19,6 +19,6 @@ export default class Routes extends Component {
 					<Route path="/home" component={Menus} />
 				</Switch>
 			</Router>
-		)
+		);
 	}
 }

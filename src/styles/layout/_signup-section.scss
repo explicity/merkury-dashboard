@@ -1,13 +1,12 @@
 .signup-section {
 	min-height: 100vh;
-	background: url('./../../public/img/bg-login.png') no-repeat center center; 
+	background: url("./../../public/img/bg-login.png") no-repeat center center;
 	background-size: cover;
 	display: flex;
-    justify-content: center;
-    align-items: center;
-
+	justify-content: center;
+	align-items: center;
 }
- 
+
 .inner {
 	width: 600px;
 	max-width: 100%;
@@ -19,25 +18,23 @@
 		background-color: $inner-header;
 		height: 75px;
 		display: flex;
-    	justify-content: space-between;
-    	align-items: center;
+		justify-content: space-between;
+		align-items: center;
 
-       .brand {
-   		 	margin-left: 30px;
+		.brand {
+			margin-left: 30px;
 
-   		 	&-logo {
-
-   		 		span {
-   		 			@media (max-width: 374px) {
+			&-logo {
+				span {
+					@media (max-width: 374px) {
 						display: none;
 					}
-   		 		}
-   		 	}
-   		}
+				}
+			}
+		}
 	}
 
 	.nav {
-
 		&-tabs {
 			border: none;
 			height: 75px;
@@ -62,7 +59,7 @@
 				border: none;
 				cursor: pointer;
 			}
-	
+
 			&.active {
 				margin-top: 5px;
 				background-color: $inner-header;
@@ -74,7 +71,6 @@
 }
 
 .tab {
-
 	&-content {
 		height: 325px;
 	}
@@ -109,7 +105,7 @@
 
 		.form {
 			position: relative;
-			
+
 			&-control {
 				border-radius: 0;
 				border: none;
@@ -127,14 +123,13 @@
 
 			&-group {
 				border-bottom: 1px solid $color-input;
-			    display: flex;
-  				flex-direction: row;
+				display: flex;
+				flex-direction: row;
 
-  				.fa-lg {
-  					font-size: 1.1rem;
-  				}
+				.fa-lg {
+					font-size: 1.1rem;
+				}
 			}
-
 		}
 
 		.btn {
@@ -147,7 +142,7 @@
 			&-secondary {
 				background-color: $inner-secondary;
 				border-color: $inner-secondary;
-				transition: .3s;
+				transition: 0.3s;
 
 				&:hover {
 					background-color: $inner-header;
@@ -158,7 +153,6 @@
 }
 
 .brand {
-
 	&-logo {
 		color: $color-white;
 		font-weight: $font-normal;
@@ -177,35 +171,4 @@
 			color: $color-white;
 		}
 	}
-}
-
-.hvr-icon-forward {
-  display: inline-block;
-  vertical-align: middle;
-  -webkit-transform: perspective(1px) translateZ(0);
-  transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px transparent;
-  position: relative;
-  padding-right: 2.2em;
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-} 
-.hvr-icon-forward:before {
-  content: "\f105";
-  position: absolute; 
-  right: 1em;
-  padding: 0 1px;
-  font-family: FontAwesome;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  -webkit-transition-duration: 0.1s;
-  transition-duration: 0.1s;
-  -webkit-transition-property: transform;
-  transition-property: transform;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-}
-.hvr-icon-forward:hover:before, .hvr-icon-forward:focus:before, .hvr-icon-forward:active:before {
-  -webkit-transform: translateX(4px);
-  transform: translateX(4px);
 }

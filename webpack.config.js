@@ -1,35 +1,34 @@
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const port = process.env.PORT || 3000;
 
 module.exports = {
-  entry: ['react-hot-loader/patch', './src/index.js'],
+  entry: ["react-hot-loader/patch", "./src/index.js"],
   output: {
-    filename: 'bundle.[hash].js',
-    publicPath: '/'
+    filename: "bundle.[hash].js",
+    publicPath: "/"
   },
 
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
 
   module: {
     rules: [
-
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader']
+        use: ["babel-loader"]
       },
 
       {
-          test: /\.scss$/,
-          loader: 'style-loader!css-loader!sass-loader'
+        test: /\.scss$/,
+        loader: "style-loader!css-loader!sass-loader"
       },
-      
 
-
-      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
-
+      {
+        test: /\.(jpe?g|png|woff|woff2|eot|ttf|svg)$/,
+        loader: "url-loader?limit=100000"
+      }
     ]
   },
 
@@ -38,12 +37,12 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
-      template: 'public/index.html'
+      template: "public/index.html"
     })
   ],
-  
+
   devServer: {
-    host: 'localhost',
+    host: "localhost",
     port: port,
     historyApiFallback: true,
     open: true,
