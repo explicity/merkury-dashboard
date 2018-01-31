@@ -16,7 +16,7 @@ export default class Navigation extends Component {
 		this.toggleDropdown = this.toggleDropdown.bind(this);
 		this.toggleSidebar = this.toggleSidebar.bind(this);
 		this.state = {
-			isSidebarOpen: true,
+			isSidebarOpen: false,
 			dropdownOpen: false
 		};
 	}
@@ -28,12 +28,14 @@ export default class Navigation extends Component {
 			});
 			document.getElementById("aside").style.marginLeft = "-200px";
 			document.getElementById("main").style.width = "100%";
+			document.getElementById("nav").style.width = "100%";
 		} else {
 			this.setState({
 				isSidebarOpen: !this.state.isSidebarOpen
 			});
 			document.getElementById("aside").style.marginLeft = "0";
 			document.getElementById("main").style.width = "calc(100% - 200px)";
+			document.getElementById("nav").style.width = "calc(100% - 200px)";
 		}
 	}
 
@@ -45,7 +47,7 @@ export default class Navigation extends Component {
 
 	render() {
 		return (
-			<header className="header" id="main">
+			<header className="header" id="nav">
 				<div className="navbar">
 					<div
 						className={`menu ${
@@ -70,8 +72,11 @@ export default class Navigation extends Component {
 							<span className="sr-only">Mails</span>
 						</button>
 						<button className="header-main-btn">
-							<i className="fa fa-bell" aria-hidden="true" />
-							<span className="sr-only">Notifications</span>
+							<div className="notification">
+								<i className="fa fa-bell" aria-hidden="true" />
+								<span className="badge badge-light">9</span>
+								<span className="sr-only">Notifications</span>
+							</div>
 						</button>
 						<Dropdown
 							isOpen={this.state.dropdownOpen}

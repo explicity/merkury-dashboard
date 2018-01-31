@@ -1,0 +1,48 @@
+.main {
+	&-layout {
+		margin-top: 70px;
+		margin-left: auto;
+		transition: 0.5s;
+		padding: 25px 0;
+		background-color: $color-bg;
+		min-height: 100vh;
+	}
+
+	&-title {
+		font-weight: $font-normal;
+		font-size: 40px;
+		color: $inner-header;
+	}
+}
+
+.charts {
+	background-color: $color-white;
+	padding: 20px;
+
+	&-header {
+		display: flex;
+		justify-content: space-between;
+
+		&-title {
+			font-size: 25px;
+			color: $color-title;
+			font-weight: $font-bold;
+		}
+
+		.btn {
+			border-radius: 24px;
+			font-size: 11px;
+			font-weight: $font-normal;
+
+			&-secondary {
+				background-color: $color-btn;
+				color: $color-title;
+			}
+
+			.active {
+				color: $inner-header;
+				margin-right: 10px;
+			}
+		}
+	}
+}
