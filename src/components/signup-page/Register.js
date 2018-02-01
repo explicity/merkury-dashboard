@@ -2,33 +2,49 @@ import React, { Component } from "react";
 import { TabPane, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 export default class Register extends Component {
+	constructor(props) {
+		super(props);
+
+		this.onRegisterPressed = this.onRegisterPressed.bind(this);
+		this.handleInputChange = this.handleInputChange.bind(this);
+		this.state = {
+			email: "",
+			username: "",
+			password: "",
+			number: ""
+		};
+	}
+
+	handleInputChange(event) {
+		const target = event.target;
+		const value =
+			target.type === "checkbox" ? target.checked : target.value;
+		const name = target.name;
+
+		this.setState({
+			[name]: value
+		});
+	}
+
+	onRegisterPressed(event) {
+		event.preventDefault();
+
+		const userData = {
+			email: this.state.email,
+			username: this.state.username,
+			password: this.state.password,
+			number: this.state.number
+		};
+
+		localStorage.setItem("usersRecord", JSON.stringify(userData));
+
+		document.getElementById("register-email").value = "";
+		document.getElementById("register-username").value = "";
+		document.getElementById("register-password").value = "";
+		document.getElementById("register-number").value = "";
+	}
+
 	render() {
-		let usersArray = [];
-
-		if (JSON.parse(localStorage.usersRecord) != "") {
-			usersArray = JSON.parse(localStorage.usersRecord);
-		}
-
-		function onRegisterPressed() {
-			const userObj = {
-				email: document.getElementById("register-email").value,
-				username: document.getElementById("register-username").value,
-				password: document.getElementById("register-password").value,
-				number: document.getElementById("register-number").value
-			};
-
-			usersArray.push(userObj);
-
-			localStorage.usersRecord = JSON.stringify(usersArray);
-
-			console.log(localStorage.usersRecord);
-
-			document.getElementById("register-email").value = "";
-			document.getElementById("register-username").value = "";
-			document.getElementById("register-password").value = "";
-			document.getElementById("register-number").value = "";
-		}
-
 		return (
 			<TabPane tabId="1">
 				<div className="container tab-section">
@@ -48,6 +64,7 @@ export default class Register extends Component {
 								name="email"
 								id="register-email"
 								placeholder="Email"
+								onChange={this.handleInputChange}
 							/>
 						</FormGroup>{" "}
 						<FormGroup>
@@ -64,6 +81,7 @@ export default class Register extends Component {
 								name="username"
 								id="register-username"
 								placeholder="Username"
+								onChange={this.handleInputChange}
 							/>
 						</FormGroup>{" "}
 						<FormGroup>
@@ -81,6 +99,7 @@ export default class Register extends Component {
 								name="password"
 								id="register-password"
 								placeholder="Password"
+								onChange={this.handleInputChange}
 							/>
 						</FormGroup>{" "}
 						<FormGroup>
@@ -95,14 +114,15 @@ export default class Register extends Component {
 							</Label>
 							<Input
 								type="tel"
-								name="phone-number"
+								name="number"
 								id="register-number"
 								placeholder="Phone number"
+								onChange={this.handleInputChange}
 							/>
 						</FormGroup>{" "}
 						<Button
 							className="hvr-icon-forward"
-							onClick={onRegisterPressed}
+							onClick={this.onRegisterPressed}
 						>
 							Sign up
 						</Button>

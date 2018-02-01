@@ -6,9 +6,32 @@
 	top: 0;
 	left: 0;
 	transition: 0.5s;
-	width: 200px;
+	width: 50px;
 	overflow-x: hidden;
-	margin-left: -200px;
+
+	&.opened {
+		width: 200px;
+
+		.brand {
+			&-logo {
+				margin-left: 25px;
+
+				span {
+					visibility: visible;
+					opacity: 1;
+				}
+			}
+		}
+
+		.sidebar-nav-link {
+			padding: 15px 0 15px 25px;
+
+			span {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
 
 	&-nav {
 		&-item {
@@ -20,17 +43,31 @@
 		}
 
 		&-link {
+			padding: 15px 0 15px 10px;
 			display: block;
-			padding: 15px 0 15px 25px;
 			color: $color-white;
 			font-weight: $font-normal;
 			font-size: 15px;
 			border-left: 5px solid $inner-header;
 			transition: all 0.2s;
+			white-space: nowrap;
+			overflow: hidden;
+
+			span {
+				transition: all 0.5s;
+				visibility: hidden;
+				opacity: 0;
+				height: 0;
+			}
 
 			&.active {
 				background-color: $color-active;
 				border-left: 5px solid $inner-secondary;
+
+				&:hover {
+					background-color: $color-active;
+					border-left: 5px solid $inner-secondary;
+				}
 			}
 
 			&:hover {
@@ -46,7 +83,17 @@
 		margin-bottom: 20px;
 
 		&-logo {
-			margin-left: 25px;
+			margin-left: 10px;
+			white-space: nowrap;
+			overflow: hidden;
+			transition: all 0.5s;
+
+			span {
+				transition: all 0.5s;
+				visibility: hidden;
+				opacity: 0;
+				height: 0;
+			}
 		}
 	}
 
@@ -60,7 +107,7 @@
 	position: fixed;
 	top: 0;
 	right: 0;
-	width: 100%;
+	width: calc(100% - 50px);
 	height: 70px;
 	background-color: $color-white;
 	z-index: 9;

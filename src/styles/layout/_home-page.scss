@@ -6,6 +6,7 @@
 		padding: 25px 0;
 		background-color: $color-bg;
 		min-height: 100vh;
+		width: calc(100% - 50px);
 	}
 
 	&-title {

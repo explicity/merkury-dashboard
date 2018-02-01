@@ -6,6 +6,7 @@ import {
 	DropdownItem
 } from "reactstrap";
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 
 import Avatar from "./../../../public/img/user.jpg";
 
@@ -13,9 +14,11 @@ export default class Navigation extends Component {
 	constructor(props) {
 		super(props);
 
+		this.clearStorage = this.clearStorage.bind(this);
 		this.toggleDropdown = this.toggleDropdown.bind(this);
 		this.toggleSidebar = this.toggleSidebar.bind(this);
 		this.state = {
+			isLoggedIn: true,
 			isSidebarOpen: false,
 			dropdownOpen: false
 		};
@@ -26,14 +29,14 @@ export default class Navigation extends Component {
 			this.setState({
 				isSidebarOpen: !this.state.isSidebarOpen
 			});
-			document.getElementById("aside").style.marginLeft = "-200px";
-			document.getElementById("main").style.width = "100%";
-			document.getElementById("nav").style.width = "100%";
+			document.getElementById("aside").classList.remove("opened");
+			document.getElementById("main").style.width = "calc(100% - 50px)";
+			document.getElementById("nav").style.width = "calc(100% - 50px)";
 		} else {
 			this.setState({
 				isSidebarOpen: !this.state.isSidebarOpen
 			});
-			document.getElementById("aside").style.marginLeft = "0";
+			document.getElementById("aside").classList.add("opened");
 			document.getElementById("main").style.width = "calc(100% - 200px)";
 			document.getElementById("nav").style.width = "calc(100% - 200px)";
 		}
@@ -42,6 +45,12 @@ export default class Navigation extends Component {
 	toggleDropdown() {
 		this.setState({
 			dropdownOpen: !this.state.dropdownOpen
+		});
+	}
+
+	clearStorage() {
+		this.setState({
+			isLoggedIn: false
 		});
 	}
 
@@ -100,7 +109,12 @@ export default class Navigation extends Component {
 							</DropdownToggle>
 							<DropdownMenu>
 								<DropdownItem>
-									<Link to="">Log out</Link>
+									<Link to="" onClick={this.clearStorage}>
+										Log Out
+									</Link>
+									{!this.state.isLoggedIn && (
+										<Redirect to={""} />
+									)}
 								</DropdownItem>
 							</DropdownMenu>
 						</Dropdown>
