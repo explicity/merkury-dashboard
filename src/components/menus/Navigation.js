@@ -113,7 +113,7 @@ export default class Navigation extends Component {
 										Log Out
 									</Link>
 									{!this.state.isLoggedIn && (
-										<Redirect to={""} />
+										<Redirect to={"/"} />
 									)}
 								</DropdownItem>
 							</DropdownMenu>

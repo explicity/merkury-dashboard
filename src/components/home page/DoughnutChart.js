@@ -1,3 +1,5 @@
+import "./../../styles/layout/_charts.scss";
+
 import React, { Component } from "react";
 
 import {

@@ -1,0 +1,124 @@
+.content {
+	background-color: $color-white;
+
+	&-header {
+		padding: 20px 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 2px solid $color-content;
+
+		&-title {
+			font-weight: $font-bold;
+			color: $inner-header;
+			font-size: 20px;
+		}
+
+		.badge {
+			padding: 6px 10px;
+			border-radius: 100%;
+			font-size: 18px;
+			margin-left: 7px;
+
+			&-primary {
+				background-color: $color-title-secondary;
+			}
+
+			&-secondary {
+				background-color: $color-badge;
+			}
+		}
+	}
+
+	&-item {
+		padding: 20px 20px;
+		border-bottom: 2px solid $color-content;
+		display: flex;
+		align-items: center;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&.active {
+			background-color: $color-messages-active;
+		}
+
+		&.messages-section {
+			padding: 17px 20px 14px 20px;
+		}
+
+		&-img {
+			border-radius: 100%;
+			margin-right: 15px;
+		}
+
+		&-title {
+			color: $inner-header;
+			font-size: 15px;
+			letter-spacing: 0.28px;
+			font-weight: $font-bold;
+		}
+
+		&-message {
+			color: $inner-header;
+			font-size: 12px;
+			letter-spacing: 0.2px;
+			font-weight: $font-normal;
+
+			p {
+				margin-bottom: 7px;
+			}
+
+			.fa {
+				font-size: 15px;
+				color: $color-black;
+			}
+		}
+
+		&-user {
+			font-weight: $font-bold;
+			margin-right: 5px;
+
+			a {
+				color: $inner-header;
+			}
+		}
+
+		&-time {
+			span {
+				font-weight: $font-normal;
+				font-size: 12px;
+				color: $color-title;
+				letter-spacing: 0.2px;
+			}
+
+			.active {
+				color: $color-badge;
+			}
+
+			.fa {
+				font-size: 15px;
+				vertical-align: middle;
+			}
+		}
+
+		.row {
+			width: 100%;
+			margin: 0;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: nowrap;
+		}
+
+		.btn {
+			background-color: transparent;
+			border: none;
+
+			.fa-ellipsis-v {
+				vertical-align: middle;
+				font-size: 30px;
+			}
+		}
+	}
+}

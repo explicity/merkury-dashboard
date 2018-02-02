@@ -54,7 +54,7 @@ export default class Sidebar extends Component {
           </li>
           <li className="sidebar-nav-item">
             <Link
-              to="/home"
+              to="/workflow"
               className={`sidebar-nav-link ${
                 this.state.activeTab === "2" ? "active " : ""
               }`}
@@ -68,7 +68,7 @@ export default class Sidebar extends Component {
           </li>
           <li className="sidebar-nav-item">
             <Link
-              to="/home"
+              to="/statistics"
               className={`sidebar-nav-link ${
                 this.state.activeTab === "3" ? "active " : ""
               }`}
@@ -82,7 +82,7 @@ export default class Sidebar extends Component {
           </li>
           <li className="sidebar-nav-item">
             <Link
-              to="/home"
+              to="/calendar"
               className={`sidebar-nav-link ${
                 this.state.activeTab === "4" ? "active " : ""
               }`}
@@ -96,7 +96,7 @@ export default class Sidebar extends Component {
           </li>
           <li className="sidebar-nav-item">
             <Link
-              to="/home"
+              to="/users"
               className={`sidebar-nav-link ${
                 this.state.activeTab === "5" ? "active " : ""
               }`}
@@ -110,7 +110,7 @@ export default class Sidebar extends Component {
           </li>
           <li className="sidebar-nav-item">
             <Link
-              to="/home"
+              to="/settings"
               className={`sidebar-nav-link ${
                 this.state.activeTab === "6" ? "active " : ""
               }`}
