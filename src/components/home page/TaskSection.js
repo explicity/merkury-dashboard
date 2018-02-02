@@ -1,3 +1,5 @@
+import "./../../styles/layout/_home-sections.scss";
+
 import React, { Component } from "react";
 
 import TaskItem from "./task section/TaskItem.js";

@@ -1,3 +1,5 @@
+import "./../../styles/layout/_navigation.scss";
+
 import React, { Component } from "react";
 import {
 	Dropdown,
@@ -30,15 +32,15 @@ export default class Navigation extends Component {
 				isSidebarOpen: !this.state.isSidebarOpen
 			});
 			document.getElementById("aside").classList.remove("opened");
-			document.getElementById("main").style.width = "calc(100% - 50px)";
-			document.getElementById("nav").style.width = "calc(100% - 50px)";
+			document.getElementById("main").classList.remove("active");
+			document.getElementById("nav").classList.remove("active");
 		} else {
 			this.setState({
 				isSidebarOpen: !this.state.isSidebarOpen
 			});
 			document.getElementById("aside").classList.add("opened");
-			document.getElementById("main").style.width = "calc(100% - 200px)";
-			document.getElementById("nav").style.width = "calc(100% - 200px)";
+			document.getElementById("main").classList.add("active");
+			document.getElementById("nav").classList.add("active");
 		}
 	}
 
@@ -49,6 +51,7 @@ export default class Navigation extends Component {
 	}
 
 	clearStorage() {
+		localStorage.clear();
 		this.setState({
 			isLoggedIn: false
 		});
@@ -83,7 +86,7 @@ export default class Navigation extends Component {
 						<button className="header-main-btn">
 							<div className="notification">
 								<i className="fa fa-bell" aria-hidden="true" />
-								<span className="badge badge-light">9</span>
+								<span className="badge badge-light">3</span>
 								<span className="sr-only">Notifications</span>
 							</div>
 						</button>
@@ -97,7 +100,7 @@ export default class Navigation extends Component {
 								data-toggle="dropdown"
 								aria-expanded={this.state.dropdownOpen}
 							>
-								<div className="hvr-icon-hang">
+								<div className="avatar hvr-icon-hang">
 									<span className="sr-only">User</span>
 									<img
 										src={Avatar}

@@ -1,9 +1,12 @@
+import "./../styles/layout/_home-page.scss";
+
 import React, { Component } from "react";
 
 import { Container, Row, Col } from "reactstrap";
 
 import TaskSection from "./home page/TaskSection.js";
 import MessagesSection from "./home page/MessagesSection.js";
+import ActivitySection from "./home page/ActivitySection.js";
 
 import LineChart from "./home page/LineChart.js";
 import DoughnutChart from "./home page/DoughnutChart.js";
@@ -39,13 +42,15 @@ export default class HomePage extends Component {
 						</Col>
 					</Row>
 					<Row>
-						<Col xs="12" md="4">
+						<Col xs="12" lg="4">
 							<TaskSection />
 						</Col>
-						<Col xs="12" md="4">
+						<Col xs="12" lg="4">
 							<MessagesSection />
 						</Col>
-						<Col xs="12" md="4" />
+						<Col xs="12" lg="4">
+							<ActivitySection />
+						</Col>
 					</Row>
 				</Container>
 			</div>

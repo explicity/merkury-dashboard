@@ -1,3 +1,5 @@
+import "./../styles/layout/_signup-section.scss";
+
 import React, { Component } from "react";
 import {
   TabContent,

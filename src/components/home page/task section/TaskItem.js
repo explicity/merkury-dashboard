@@ -21,7 +21,7 @@ export default class TaskItem extends Component {
 										{item.title}
 									</a>
 								</h4>
-								<p className="content-item-time">
+								<div className="content-item-time">
 									<i className="fa fa-clock-o fa-fw" />
 									<span
 										className={`${
@@ -32,7 +32,7 @@ export default class TaskItem extends Component {
 									>
 										{item.time}
 									</span>
-								</p>
+								</div>
 							</div>
 							<button className="btn">
 								<i className="fa fa-ellipsis-v" />

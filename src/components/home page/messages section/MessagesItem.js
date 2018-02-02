@@ -9,7 +9,7 @@ export default class MessagesItem extends Component {
 				{_map(this.props.obj, item => (
 					<li
 						key={item.id}
-						className={`content-item messages-section ${
+						className={`content-item users-message ${
 							item.id === 1 || item.id === 2 ? "active" : ""
 						}`}
 					>

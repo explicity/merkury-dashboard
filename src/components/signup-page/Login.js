@@ -1,3 +1,5 @@
+import "./../../styles/layout/_signup-tabs.scss";
+
 import React, { Component } from "react";
 import { Redirect } from "react-router";
 

@@ -1,12 +1,16 @@
+@import "./../base/variables";
+@import "./../base/reset";
+
 .content {
 	background-color: $color-white;
+	margin-bottom: 20px;
 
 	&-header {
 		padding: 20px 20px;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		border-bottom: 2px solid $color-content;
+		border-bottom: 1px solid $color-content;
 
 		&-title {
 			font-weight: $font-bold;
@@ -27,12 +31,16 @@
 			&-secondary {
 				background-color: $color-badge;
 			}
+
+			&-activity {
+				padding: 6px 7px;
+			}
 		}
 	}
 
 	&-item {
 		padding: 20px 20px;
-		border-bottom: 2px solid $color-content;
+		border-bottom: 1px solid $color-content;
 		display: flex;
 		align-items: center;
 
@@ -44,7 +52,11 @@
 			background-color: $color-messages-active;
 		}
 
-		&.messages-section {
+		&.users-activity {
+			border-bottom: none;
+		}
+
+		&.users-message {
 			padding: 17px 20px 14px 20px;
 		}
 
@@ -78,7 +90,6 @@
 
 		&-user {
 			font-weight: $font-bold;
-			margin-right: 5px;
 
 			a {
 				color: $inner-header;
@@ -100,7 +111,17 @@
 			.fa {
 				font-size: 15px;
 				vertical-align: middle;
+				margin-left: -2px;
 			}
+		}
+
+		&-action {
+			color: $color-title;
+		}
+
+		&-project {
+			color: $inner-header;
+			font-weight: $font-bold;
 		}
 
 		.row {

@@ -68,7 +68,7 @@ export default class DoughnutChart extends Component {
 							isOpen={this.state.dropdownOpen}
 							toggle={this.toggleDropdown}
 						>
-							<DropdownToggle caret className="charts-header-btn">
+							<DropdownToggle caret>
 								<span>Perioud: </span>
 								<span className="active">
 									{this.state.activeTab}

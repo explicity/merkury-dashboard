@@ -1,3 +1,5 @@
+import "./../../styles/layout/_home-sections.scss";
+
 import React, { Component } from "react";
 
 import MessagesItem from "./messages section/MessagesItem.js";

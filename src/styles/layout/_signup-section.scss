@@ -1,6 +1,10 @@
+@import "./../base/variables";
+@import "./../base/reset";
+
 .signup-section {
 	min-height: 100vh;
-	background: url("./../../public/img/bg-login.png") no-repeat center center;
+	background: url("./../../../public/img/bg-login.png") no-repeat center
+		center;
 	background-size: cover;
 	display: flex;
 	justify-content: center;
@@ -43,7 +47,7 @@
 		&-item {
 			display: flex;
 			width: 90px;
-			margin-bottom: 0;
+			margin-bottom: 0 !important;
 		}
 
 		&-link {
@@ -61,92 +65,10 @@
 			}
 
 			&.active {
-				margin-top: 5px;
-				background-color: $inner-header;
-				border: none;
-				border-bottom: 5px solid $inner-secondary;
-			}
-		}
-	}
-}
-
-.tab {
-	&-content {
-		height: 325px;
-	}
-
-	&-pane {
-		height: inherit;
-	}
-
-	&-section {
-		height: inherit;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-content: center;
-		text-align: center;
-
-		&.container {
-			max-width: 320px;
-		}
-
-		&-title {
-			color: $color-title;
-			font-weight: $font-light;
-			line-height: 14.4px;
-			font-size: 24px;
-			margin-bottom: 40px;
-
-			span {
-				color: $color-title-secondary;
-			}
-		}
-
-		.form {
-			position: relative;
-
-			&-control {
-				border-radius: 0;
-				border: none;
-				background-color: $color-inner;
-				padding: 3px 7px;
-
-				&::placeholder {
-					opacity: 0.7;
-				}
-
-				&:active {
-					box-shadow: none;
-				}
-			}
-
-			&-group {
-				border-bottom: 1px solid $color-input;
-				display: flex;
-				flex-direction: row;
-
-				.fa-lg {
-					font-size: 1.1rem;
-				}
-			}
-		}
-
-		.btn {
-			border-radius: 36px;
-			padding: 8px 80px;
-			font-weight: $font-bold;
-			font-size: 12px;
-			margin-top: 25px;
-
-			&-secondary {
-				background-color: $inner-secondary;
-				border-color: $inner-secondary;
-				transition: 0.3s;
-
-				&:hover {
-					background-color: $inner-header;
-				}
+				margin-top: 5px !important;
+				background-color: $inner-header !important;
+				border: none !important;
+				border-bottom: 5px solid $inner-secondary !important;
 			}
 		}
 	}
