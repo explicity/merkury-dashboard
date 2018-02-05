@@ -51,10 +51,10 @@ export default class Navigation extends Component {
 	}
 
 	clearStorage() {
-		localStorage.clear();
 		this.setState({
 			isLoggedIn: false
 		});
+		localStorage.loggedIn = false;
 	}
 
 	render() {

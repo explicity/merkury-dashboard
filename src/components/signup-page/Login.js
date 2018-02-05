@@ -41,6 +41,7 @@ export default class Login extends Component {
 			this.setState({
 				haveAccess: true
 			});
+			localStorage.setItem("loggedIn", true);
 		}
 	}
 

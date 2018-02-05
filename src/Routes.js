@@ -10,7 +10,7 @@ import {
 import Signup from "./components/Signup.js";
 import Menus from "./components/Menus.js";
 import HomePage from "./components/HomePage.js";
-import Statistics from "./components/Statistics.js";
+import WorkFlow from "./components/WorkFlow.js";
 
 export default class Routes extends Component {
 	render() {
@@ -34,11 +34,11 @@ export default class Routes extends Component {
 				<Switch>
 					<Route exact={true} path="/" component={Signup} />
 					<DefaultLayout path="/home" component={HomePage} />
-					<DefaultLayout path="/statistics" component={Statistics} />
-					<DefaultLayout path="/workflow" component={Statistics} />
-					<DefaultLayout path="/calendar" component={Statistics} />
-					<DefaultLayout path="/users" component={Statistics} />
-					<DefaultLayout path="/settings" component={Statistics} />
+					<DefaultLayout path="/statistics" component={WorkFlow} />
+					<DefaultLayout path="/workflow" component={WorkFlow} />
+					<DefaultLayout path="/calendar" component={WorkFlow} />
+					<DefaultLayout path="/users" component={WorkFlow} />
+					<DefaultLayout path="/settings" component={WorkFlow} />
 				</Switch>
 			</Router>
 		);
