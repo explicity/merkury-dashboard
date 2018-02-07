@@ -1,4 +1,5 @@
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import "./../styles/layout/_calendar.scss";
 
 import React, { Component } from "react";
 import BigCalendar from "react-big-calendar";

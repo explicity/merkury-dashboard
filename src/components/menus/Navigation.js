@@ -112,6 +112,9 @@ export default class Navigation extends Component {
 							</DropdownToggle>
 							<DropdownMenu>
 								<DropdownItem>
+									<Link to="/settings">Settings</Link>
+								</DropdownItem>
+								<DropdownItem>
 									<Link to="" onClick={this.clearStorage}>
 										Log Out
 									</Link>
