@@ -18,7 +18,7 @@ export default class LineChart extends Component {
 		this.state = {
 			activeTab: "Last Year",
 			dropdownOpen: false,
-			chartsData: {
+			chartsLastData: {
 				labels: ["", "", "", "", "", "", "", "", ""],
 				datasets: [
 					{
@@ -35,6 +35,28 @@ export default class LineChart extends Component {
 							300
 						],
 						label: "Last Year",
+						borderColor: "#3e95cd",
+						fill: false
+					}
+				]
+			},
+			chartsThisData: {
+				labels: ["", "", "", "", "", "", "", "", ""],
+				datasets: [
+					{
+						data: [
+							220,
+							280,
+							700,
+							250,
+							210,
+							320,
+							280,
+							380,
+							650,
+							300
+						],
+						label: "This Year",
 						borderColor: "#3e95cd",
 						fill: false
 					}
@@ -100,7 +122,12 @@ export default class LineChart extends Component {
 							</DropdownMenu>
 						</Dropdown>
 					</header>
-					<Line data={this.state.chartsData} />
+					{this.state.activeTab === "Last Year" && (
+						<Line data={this.state.chartsLastData} />
+					)}
+					{this.state.activeTab === "This Year" && (
+						<Line data={this.state.chartsThisData} />
+					)}
 				</div>
 			</div>
 		);

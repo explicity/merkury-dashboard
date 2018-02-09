@@ -2,6 +2,8 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import "./../styles/layout/_calendar.scss";
 
 import React, { Component } from "react";
+
+import MediaQuery from "react-responsive";
 import BigCalendar from "react-big-calendar";
 import moment from "moment";
 
@@ -65,15 +67,17 @@ export default class Calendar extends Component {
 		];
 
 		return (
-			<div className="container">
-				<React.Fragment>
-					<BigCalendar
-						popup
-						events={events}
-						defaultDate={new Date(2016, 0, 1)}
-					/>
-				</React.Fragment>
-			</div>
+			<MediaQuery minDeviceWidth={768}>
+				<div className="container">
+					<React.Fragment>
+						<BigCalendar
+							popup
+							events={events}
+							defaultDate={new Date(2016, 0, 1)}
+						/>
+					</React.Fragment>
+				</div>
+			</MediaQuery>
 		);
 	}
 }

@@ -20,7 +20,7 @@ export default class DoughnutChart extends Component {
 		this.state = {
 			activeTab: "Last Year",
 			dropdownOpen: false,
-			chartsData: {
+			chartsLastData: {
 				labels: [
 					"Websites",
 					"Logo",
@@ -41,6 +41,29 @@ export default class DoughnutChart extends Component {
 						data: [472, 383, 349, 194, 162]
 					}
 				]
+			},
+
+			chartsThisData: {
+				labels: [
+					"Websites",
+					"Logo",
+					"Social Media",
+					"Adwords",
+					"E-Commerce"
+				],
+				datasets: [
+					{
+						label: "Sales",
+						backgroundColor: [
+							"#25396e",
+							"#5584ff",
+							"#4b74e0",
+							"#4164c2",
+							"#3755a4"
+						],
+						data: [21, 704, 92, 672, 71]
+					}
+				]
 			}
 		};
 	}
@@ -58,6 +81,7 @@ export default class DoughnutChart extends Component {
 			dropdownOpen: !this.state.dropdownOpen
 		});
 	}
+
 	render() {
 		return (
 			<div className="charts">
@@ -102,7 +126,12 @@ export default class DoughnutChart extends Component {
 							</DropdownMenu>
 						</Dropdown>
 					</header>
-					<Doughnut data={this.state.chartsData} />
+					{this.state.activeTab === "Last Year" && (
+						<Doughnut data={this.state.chartsLastData} />
+					)}
+					{this.state.activeTab === "This Year" && (
+						<Doughnut data={this.state.chartsThisData} />
+					)}
 				</div>
 			</div>
 		);
