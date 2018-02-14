@@ -24,20 +24,23 @@ $font-normal: 500;
 		width: calc(100% - 200px);
 
 		@media (max-width: 424px) {
-			.header-main-btn,
-			.avatar {
-				display: none;
+			.header-main {
+				opacity: 0;
 			}
 		}
 	}
 
 	.navbar {
 		height: 70px;
+		flex-wrap: nowrap;
 	}
 
 	&-main {
 		display: flex;
+		flex-wrap: nowrap;
 		align-items: center;
+		transition: .2s;
+		opacity: 1;
 
 		.btn {
 			padding: 5px 20px;
