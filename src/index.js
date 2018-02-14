@@ -1,3 +1,5 @@
+import "./styles.scss";
+
 import { AppContainer } from "react-hot-loader";
 
 import React from "react";

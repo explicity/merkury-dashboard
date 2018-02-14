@@ -1,0 +1,186 @@
+// colors
+
+$color-white: #fff;
+$color-content: #dadee7;
+$color-title-secondary: #5384ff;
+$color-badge: #f83c7b;
+$inner-header: #0e1a35;
+$color-messages-active: #f4f5f8;
+$color-black: #000;
+$color-title: #8492af;
+
+// font-weights
+
+$font-normal: 500;
+$font-bold: 700;
+
+.workflow {
+	.content-item {
+		border: 1px solid rgba(132, 146, 175, 0.3);
+		margin: 7px 0;
+	}
+}
+
+.content {
+	background-color: $color-white;
+	margin-bottom: 20px;
+
+	&-header {
+		padding: 20px 20px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		border-bottom: 1px solid $color-content;
+
+		&-title {
+			font-weight: $font-bold;
+			color: $inner-header;
+			font-size: 20px;
+		}
+
+		.badge {
+			padding: 6px 10px;
+			border-radius: 100%;
+			font-size: 18px;
+			margin-left: 7px;
+
+			&-primary {
+				background-color: $color-title-secondary;
+			}
+
+			&-secondary {
+				background-color: $color-badge;
+			}
+
+			&-activity {
+				padding: 6px 7px;
+			}
+		}
+	}
+
+	&-item {
+		padding: 20px 20px 21px;
+		border-bottom: 1px solid $color-content;
+		display: flex;
+		align-items: center;
+		background-color: $color-white;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		&.active {
+			background-color: $color-messages-active;
+		}
+
+		&.users-activity {
+			border-bottom: none;
+
+			padding: 20px 20px 20.7px;
+		}
+
+		&.users-message {
+			padding: 17px 20px 13.15px;
+
+			.content-item {
+				&-time {
+					margin-left: 3px;
+					vertical-align: text-top;
+				}
+
+				&-user {
+					vertical-align: text-top;
+				}
+			}
+		}
+
+		&-img {
+			border-radius: 100%;
+			margin-right: 15px;
+		}
+
+		&-title {
+			color: $inner-header;
+			font-size: 15px;
+			letter-spacing: 0.28px;
+			font-weight: $font-bold;
+		}
+
+		&-message {
+			color: $inner-header;
+			font-size: 12px;
+			letter-spacing: 0.2px;
+			font-weight: $font-normal;
+
+			p {
+				margin-bottom: 7px;
+			}
+
+			.fa {
+				font-size: 15px;
+				color: $color-black;
+			}
+		}
+
+		&-user {
+			font-weight: $font-bold;
+
+			a {
+				color: $inner-header;
+			}
+		}
+
+		&-time {
+			span {
+				font-weight: $font-normal;
+				font-size: 12px;
+				color: $color-title;
+				letter-spacing: 0.2px;
+			}
+
+			.active {
+				color: $color-badge;
+			}
+
+			.fa {
+				font-size: 15px;
+				vertical-align: middle;
+				margin-left: -2px;
+			}
+		}
+
+		&-action {
+			color: $color-title;
+		}
+
+		&-project {
+			color: $inner-header;
+			font-weight: $font-bold;
+		}
+
+		.row {
+			width: 100%;
+			margin: 0;
+			justify-content: space-between;
+			align-items: center;
+			flex-wrap: nowrap;
+		}
+
+		.btn {
+			background-color: transparent;
+			border: none;
+			color: #8492af;
+
+			.fa-ellipsis-v {
+				vertical-align: middle;
+				font-size: 30px;
+			}
+
+			&:active,
+			&:focused {
+				border-color: transparent;
+				border: none;
+			}
+		}
+	}
+}

@@ -1,0 +1,35 @@
+// colors
+
+$color-bg: #f6f7fa;
+$inner-header: #0e1a35;
+
+// font-weights
+
+$font-bold: 700;
+
+.main {
+	&-layout {
+		margin-top: 70px;
+		margin-left: auto;
+		transition: 0.5s;
+		padding: 25px 0;
+		background-color: $color-bg;
+		min-height: 100vh;
+		width: calc(100% - 50px);
+
+		&.active {
+			width: calc(100% - 200px);
+
+			@media (max-width: 764px) {
+				width: calc(100% - 50px);
+			}
+		}
+	}
+
+	&-title {
+		font-weight: $font-bold;
+		font-size: 40px;
+		color: $inner-header;
+		margin-bottom: 15px;
+	}
+}

@@ -1,17 +1,11 @@
 import React, { Component } from "react";
-import {
-	BrowserRouter as Router,
-	Route,
-	Link,
-	Switch,
-	Redirect
-} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Signup from "./components/Signup.js";
-import Menus from "./components/Menus.js";
-import HomePage from "./components/HomePage.js";
-import WorkFlow from "./components/WorkFlow.js";
-import Calendar from "./components/Calendar.js";
+import Signup from "./scenes/Sign/Signup.js";
+import Menus from "./components/menus/Menus.js";
+import HomePage from "./scenes/Home/HomePage.js";
+import Workflow from "./scenes/Workflow/WorkFlow.js";
+import Calendar from "./scenes/Calendar/Calendar.js";
 
 export default class Routes extends Component {
 	render() {
@@ -35,11 +29,8 @@ export default class Routes extends Component {
 				<Switch>
 					<Route exact={true} path="/" component={Signup} />
 					<DefaultLayout path="/home" component={HomePage} />
-					<DefaultLayout path="/statistics" component={WorkFlow} />
-					<DefaultLayout path="/workflow" component={WorkFlow} />
 					<DefaultLayout path="/calendar" component={Calendar} />
-					<DefaultLayout path="/users" component={WorkFlow} />
-					<DefaultLayout path="/settings" component={WorkFlow} />
+					<DefaultLayout path="/workflow" component={Workflow} />
 				</Switch>
 			</Router>
 		);
