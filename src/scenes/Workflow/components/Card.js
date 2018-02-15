@@ -3,15 +3,7 @@ import { findDOMNode } from "react-dom";
 import { DragSource, DropTarget } from "react-dnd";
 import flow from "lodash/flow";
 
-import TaskItem from './../../Home/components/notifications section/task section/components/TaskItem.js';
-
-// const style = {
-// 	border: "1px dashed gray",
-// 	padding: "0.5rem 1rem",
-// 	margin: ".5rem",
-// 	backgroundColor: "white",
-// 	cursor: "move"
-// };
+import TaskItem from "./../../Home/components/notifications section/task section/components/TaskItem.js";
 
 class Card extends Component {
 	render() {
@@ -25,9 +17,8 @@ class Card extends Component {
 
 		return connectDragSource(
 			connectDropTarget(
-				// <div style={{ ...style, opacity }}>{card.text}</div>
-				<div>
-				<TaskItem obj={card}/>
+				<div style={{ opacity }}>
+					<TaskItem obj={card} listId={this.props.listId} />
 				</div>
 			)
 		);

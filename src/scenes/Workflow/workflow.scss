@@ -1,0 +1,28 @@
+$color-title: #0e1a35;
+$color-title-secondary: #8492af;
+
+.workflow {
+	margin-bottom: 30px;
+
+	&-heading {
+		margin-bottom: 15px;
+
+		a {
+			color: $color-title;
+			font-weight: 700;
+			font-size: 30px;
+			width: 100%;
+			cursor: pointer;
+
+			&.hvr-icon-forward:before {
+				right: 5px;
+				color: $color-title-secondary;
+			}
+		}
+	}
+
+	.content-item {
+		border: 1px solid rgba(132, 146, 175, 0.3);
+		margin: 7px 0;
+	}
+}

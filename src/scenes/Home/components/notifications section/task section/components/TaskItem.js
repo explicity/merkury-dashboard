@@ -23,12 +23,21 @@ export default class TaskItem extends Component {
 						<h4>
 							<a className="content-item-title">{obj.title}</a>
 						</h4>
-						<div className="content-item-time">
-							<i className="fa fa-clock-o fa-fw" />
-							<span className={`${obj.isDelayed && "active"}`}>
-								{obj.time}
-							</span>
-						</div>
+						{this.props.listId === 3 ? (
+							<div className="content-item-time completed">
+								<i className="fa fa-check-circle-o" />{" "}
+								<span>Completed!</span>
+							</div>
+						) : (
+							<div className="content-item-time">
+								<i className="fa fa-clock-o fa-fw" />
+								<span
+									className={`${obj.isDelayed && "active"}`}
+								>
+									{obj.time}
+								</span>
+							</div>
+						)}
 					</div>
 
 					<button className="btn">

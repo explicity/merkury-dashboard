@@ -8,18 +8,12 @@ $inner-header: #0e1a35;
 $color-messages-active: #f4f5f8;
 $color-black: #000;
 $color-title: #8492af;
+$color-green: #00bf1b;
 
 // font-weights
 
 $font-normal: 500;
 $font-bold: 700;
-
-.workflow {
-	.content-item {
-		border: 1px solid rgba(132, 146, 175, 0.3);
-		margin: 7px 0;
-	}
-}
 
 .content {
 	background-color: $color-white;
@@ -146,6 +140,14 @@ $font-bold: 700;
 				font-size: 15px;
 				vertical-align: middle;
 				margin-left: -2px;
+			}
+
+			&.completed {
+				color: $color-green;
+
+				span {
+					color: $color-green;
+				}
 			}
 		}
 

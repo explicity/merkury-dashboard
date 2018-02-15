@@ -46,11 +46,18 @@ class Container extends Component {
 		const { cards } = this.state;
 		const { canDrop, isOver, connectDropTarget } = this.props;
 		const isActive = canDrop && isOver;
-		const backgroundColor = isActive && "lightgreen" ;
 
 		return connectDropTarget(
-			<div style={{ backgroundColor }} className="workflow col">
-				<h3>{this.props.heading}</h3>
+			<div className="workflow col">
+				<h3 className="workflow-heading">
+					<a
+						className={`${
+							this.props.id !== 3 ? "hvr-icon-forward" : ""
+						}`}
+					>
+						{this.props.heading}
+					</a>
+				</h3>
 				{cards.map((card, i) => {
 					return (
 						<Card
@@ -63,6 +70,7 @@ class Container extends Component {
 						/>
 					);
 				})}
+				=
 			</div>
 		);
 	}
