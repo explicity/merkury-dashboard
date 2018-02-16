@@ -40,6 +40,7 @@ export default class Login extends Component {
 				haveAccess: true
 			});
 			localStorage.setItem("loggedIn", true);
+			localStorage.setItem("currentPage", 1);
 		}
 	}
 

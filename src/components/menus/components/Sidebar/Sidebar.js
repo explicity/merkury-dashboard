@@ -15,11 +15,20 @@ export default class Sidebar extends Component {
     };
   }
 
+  componentWillMount() {
+    if (this.state.activeTab !== localStorage.getItem("currentPage")) {
+      this.setState({
+        activeTab: localStorage.currentPage
+      });
+    }
+  }
+
   toggle(tab) {
     if (this.state.activeTab !== tab) {
       this.setState({
         activeTab: tab
       });
+      localStorage.currentPage = tab;
     }
   }
 

@@ -24,7 +24,7 @@ export default class Signup extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: "1"
+      activeTab: "2"
     };
   }
 

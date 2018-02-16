@@ -88,3 +88,31 @@ $font-text: "Roboto", sans-serif;
 	font-weight: $font-bold;
 	font-family: $font-text;
 }
+
+.rbc-event-content {
+	text-align: left;
+}
+
+.booking-calendar {
+	.header {
+		width: 100%;
+		background-color: $inner-secondary !important;
+		border: none !important;
+		z-index: 0;
+	}
+
+	.week {
+		border-right: 1px solid $inner-secondary !important;
+		border-top: 1px solid $inner-secondary !important;
+
+		.day-box .day {
+			background-color: $color-white !important;
+			color: $inner-secondary !important;
+			border-right: 1px solid $inner-secondary !important;
+		}
+
+		.day-box:last-child .day {
+			border-right: none !important;
+		}
+	}
+}

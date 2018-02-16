@@ -33,10 +33,9 @@ $font-bold: 700;
 			max-width: 320px;
 		}
 
-		input:focus ~ .form-group {
+		input:focus {
 			box-shadow: none;
 			border: none;
-			border-bottom: 1px solid blue;
 		}
 
 		&-title {
