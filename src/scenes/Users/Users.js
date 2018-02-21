@@ -1,6 +1,18 @@
+import "./Users.scss";
+
 import React, { Component } from "react";
 
 import _map from "lodash/map";
+
+import {
+	Pagination,
+	PaginationItem,
+	PaginationLink,
+	Dropdown,
+	DropdownToggle,
+	DropdownMenu,
+	DropdownItem
+} from "reactstrap";
 
 import EmailListItem from "./components/EmailListItem.js";
 
@@ -13,6 +25,30 @@ import User6 from "./images/user6.png";
 import User7 from "./images/user7.png";
 
 export default class Users extends Component {
+	constructor(props) {
+		super(props);
+
+		this.dropdownToggle = this.dropdownToggle.bind(this);
+		this.toggle = this.toggle.bind(this);
+		this.state = {
+			openDropdown: false,
+			activeTab: "Active first"
+		};
+	}
+
+	toggle(tab) {
+		if (this.state.activeTab !== tab) {
+			this.setState({
+				activeTab: tab
+			});
+		}
+	}
+
+	dropdownToggle() {
+		this.setState({
+			openDropdown: !this.state.openDropdown
+		});
+	}
 	render() {
 		const emailList = [
 			{
@@ -21,8 +57,9 @@ export default class Users extends Component {
 					main: "John Doe",
 					secondary: "CEO"
 				},
-				activity: "Online now!",
-				email: "johndoe design.com",
+				online: true,
+				activity: "",
+				email: "johndoe@design.com",
 				phone: "(000) 111 222 333"
 			},
 
@@ -32,8 +69,9 @@ export default class Users extends Component {
 					main: "Nina Jones",
 					secondary: "UX Designer"
 				},
-				activity: "Online now!",
-				email: "ninajones design.com",
+				online: true,
+				activity: "",
+				email: "ninajones@design.com",
 				phone: "(000) 111 222 333"
 			},
 
@@ -43,8 +81,9 @@ export default class Users extends Component {
 					main: "Alex Smith",
 					secondary: "Web Designer"
 				},
-				activity: "Online now!",
-				email: "alexsmith design.com",
+				online: true,
+				activity: "",
+				email: "alexsmith@design.com",
 				phone: "(000) 111 222 333"
 			},
 
@@ -55,7 +94,7 @@ export default class Users extends Component {
 					secondary: "Account Manager"
 				},
 				activity: "20 minutes ago",
-				email: "annclooney design.com",
+				email: "annclooney@design.com",
 				phone: "(000) 111 222 333"
 			},
 
@@ -66,7 +105,7 @@ export default class Users extends Component {
 					secondary: "Project Manager"
 				},
 				activity: "40 minutes ago",
-				email: "patricksmith design.com",
+				email: "patricksmith@design.com",
 				phone: "(000) 111 222 333"
 			},
 
@@ -77,7 +116,7 @@ export default class Users extends Component {
 					secondary: "Product Designer"
 				},
 				activity: "1 hour ago",
-				email: "nickyhunt design.com",
+				email: "nickyhunt@design.com",
 				phone: "(000) 111 222 333"
 			},
 
@@ -88,33 +127,100 @@ export default class Users extends Component {
 					secondary: "Graphic Designer"
 				},
 				activity: "2 days ago",
-				email: "janedoe design.com",
+				email: "janedoe@design.com",
 				phone: "(000) 111 222 333"
 			}
 		];
 
 		return (
-			<div className="container">
-				<h2 className="section-title">
-					Users <span>(128)</span>
-				</h2>
-				<div className="table-responsive">
-					<table className="table table-bordered table-hover">
-						<thead>
-							<tr>
-								<th scope="col">Name</th>
-								<th scope="col">Last activity</th>
-								<th scope="col">Mail</th>
-								<th scope="col">Phone</th>
-								<th scope="col" />
-							</tr>
-						</thead>
-						<tbody>
-							{_map(emailList, (item, index) => (
-								<EmailListItem key={index} obj={item} />
-							))}
-						</tbody>
-					</table>
+			<div className="users">
+				<div className="container">
+					<div className="users-header">
+						<h2 className="section-title">
+							Users <span>(128)</span>
+						</h2>
+						<Dropdown
+							isOpen={this.state.openDropdown}
+							toggle={this.dropdownToggle}
+						>
+							<DropdownToggle caret>
+								Sort:{" "}
+								<span className="active">
+									{this.state.activeTab}
+								</span>
+							</DropdownToggle>
+							<DropdownMenu>
+								<DropdownItem
+									className={`${
+										this.state.activeTab === "Active first"
+											? "disabled"
+											: ""
+									}`}
+									onClick={() => {
+										this.toggle("Active first");
+									}}
+								>
+									Active first
+								</DropdownItem>
+								<DropdownItem
+									className={`${
+										this.state.activeTab === "By A-Z"
+											? "disabled"
+											: ""
+									}`}
+									onClick={() => {
+										this.toggle("By A-Z");
+									}}
+								>
+									By A-Z
+								</DropdownItem>
+							</DropdownMenu>
+						</Dropdown>
+					</div>
+					<div className="table-responsive-lg">
+						<table className="table table-bordered table-hover">
+							<thead>
+								<tr>
+									<th scope="col">Name</th>
+									<th scope="col">Last activity</th>
+									<th scope="col">Mail</th>
+									<th scope="col">Phone</th>
+									<th scope="col" />
+								</tr>
+							</thead>
+							<tbody>
+								{_map(emailList, (item, index) => (
+									<EmailListItem key={index} obj={item} />
+								))}
+							</tbody>
+						</table>
+					</div>
+					<Pagination>
+						<PaginationItem active>
+							<PaginationLink href="/users">1</PaginationLink>
+						</PaginationItem>
+						<PaginationItem>
+							<PaginationLink href="/users">2</PaginationLink>
+						</PaginationItem>
+						<PaginationItem>
+							<PaginationLink href="/users">3</PaginationLink>
+						</PaginationItem>
+						<PaginationItem>
+							<PaginationLink href="/users">4</PaginationLink>
+						</PaginationItem>
+						<PaginationItem>
+							<PaginationLink href="/users">5</PaginationLink>
+						</PaginationItem>
+						<PaginationItem>
+							<PaginationLink
+								className="pagination-controls"
+								next
+								href="#"
+							>
+								<i className="fa fa-chevron-right" />
+							</PaginationLink>
+						</PaginationItem>
+					</Pagination>
 				</div>
 			</div>
 		);

@@ -39,7 +39,7 @@ $font-normal: 500;
 		display: flex;
 		flex-wrap: nowrap;
 		align-items: center;
-		transition: .2s;
+		transition: 0.2s;
 		opacity: 1;
 
 		.btn {
@@ -88,8 +88,10 @@ $font-normal: 500;
 			.badge {
 				font-size: 55%;
 				position: absolute;
-				right: -3px;
+				right: -6px;
 				border-radius: 100%;
+				border: 2px solid $color-white;
+				top: -4.5px;
 
 				&-light {
 					color: $color-white;

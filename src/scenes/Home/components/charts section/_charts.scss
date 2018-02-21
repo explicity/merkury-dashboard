@@ -25,21 +25,5 @@ $font-bold: 700;
 			color: $color-title;
 			font-weight: $font-bold;
 		}
-
-		.btn {
-			border-radius: 24px;
-			font-size: 11px;
-			font-weight: $font-normal;
-
-			&-secondary {
-				background-color: $color-btn;
-				color: $color-title;
-			}
-
-			.active {
-				color: $inner-header;
-				margin-right: 10px;
-			}
-		}
 	}
 }

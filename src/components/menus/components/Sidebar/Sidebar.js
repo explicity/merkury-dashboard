@@ -37,14 +37,20 @@ export default class Sidebar extends Component {
       <aside className="sidebar" id="aside">
         <header className="brand">
           <h1>
-            <a href="" className="brand-logo">
+            <Link
+              to="/home"
+              className="brand-logo"
+              onClick={() => {
+                this.toggle("1");
+              }}
+            >
               <img
                 src={Logo}
                 alt="logo-icon"
                 style={{ width: 30, height: 30 }}
               />
               <span>Merkury</span>
-            </a>
+            </Link>
           </h1>
         </header>
 

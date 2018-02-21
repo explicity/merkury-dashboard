@@ -2,33 +2,59 @@
 $color-white: #fff;
 $color-active: #00bf1b;
 $color-secondary: #8492af;
+$color-text: #0e1a35;
 
 .table {
-	td {
-		vertical-align: middle;
-	}
-
 	&-item {
 		background-color: $color-white;
-	}
-
-	&-name {
-		display: flex;
-		align-items: center;
-
-		&-img {
-			border-radius: 100%;
-			margin-right: 15px;
-		}
-	}
-
-	&-activity {
-		font-weight: 500;
 		font-size: 15px;
-		color: $color-secondary;
+		font-weight: 700;
+		color: $color-text;
+		white-space: nowrap;
 
-		&.active {
-			color: $color-active;
+		&-activity {
+			font-weight: 500;
+			color: $color-secondary;
+
+			&.active {
+				color: $color-active;
+			}
+		}
+
+		.username {
+			display: flex;
+			align-items: center;
+
+			&-logo {
+				margin-right: 15px;
+				position: relative;
+
+				img {
+					border-radius: 100%;
+				}
+
+				.badge {
+					position: absolute;
+					padding: 4px;
+					border-radius: 50%;
+					right: 0.5px;
+					top: 3px;
+					border: 2px solid $color-white;
+				}
+			}
+
+			&-secondary {
+				color: $color-secondary;
+				font-weight: 200;
+				margin-top: -3px;
+			}
+		}
+
+		.btn {
+			background: transparent;
+			border: none;
+			font-size: 25px;
+			color: $color-secondary;
 		}
 	}
 }

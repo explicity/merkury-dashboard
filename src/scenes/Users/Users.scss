@@ -1,0 +1,108 @@
+//colors
+$color-main: #0e1a35;
+$color-secondary: #8492af;
+$color-active: #5584ff;
+$color-white: #fff;
+$color-btn: #ff3a76;
+
+.section-title {
+	color: $color-main;
+	font-weight: 700;
+	font-size: 30px;
+	margin-bottom: 10px;
+
+	span {
+		color: $color-secondary;
+	}
+}
+
+.users {
+	&-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	.table {
+		border: none;
+
+		td {
+			vertical-align: middle;
+		}
+
+		thead th {
+			border: none;
+			color: $color-secondary;
+		}
+
+		td,
+		th {
+			padding: 1rem 1.5rem;
+		}
+	}
+
+	.pagination {
+		justify-content: center;
+		margin-top: 25px;
+
+		&-controls {
+			background-color: transparent;
+			border: none;
+
+			.fa {
+				color: $color-active;
+			}
+		}
+
+		.page-item {
+			&.active {
+				.page-link {
+					background-color: $color-white;
+					color: $color-active;
+					border: 1px solid #dee2e6;
+				}
+			}
+
+			.page-link {
+				color: $color-main;
+				font-weight: 600;
+			}
+		}
+	}
+
+	.dropdown {
+		&.show .btn {
+			color: $color-secondary;
+		}
+
+		.btn {
+			&-secondary {
+				background-color: transparent;
+			}
+
+			.active {
+				font-weight: 700;
+			}
+		}
+	}
+}
+
+.dropdown {
+	position: static;
+
+	.btn {
+		border-radius: 24px;
+		font-size: 11px;
+		font-weight: 400;
+
+		&-secondary {
+			background-color: $color-btn;
+			color: $color-secondary;
+		}
+
+		.active {
+			color: $color-main;
+			margin-right: 10px;
+		}
+	}
+}
