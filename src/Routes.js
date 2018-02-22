@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch,
+	browserHistory
+} from "react-router-dom";
 
 import Signup from "./scenes/Sign/Signup.js";
 import Menus from "./components/menus/Menus.js";
@@ -8,6 +13,7 @@ import Workflow from "./scenes/Workflow/WorkFlow.js";
 import Calendar from "./scenes/Calendar/Calendar.js";
 import Users from "./scenes/Users/Users.js";
 import Statistics from "./scenes/Statistics/Statistics.js";
+import Settings from "./scenes/Settings/Settings.js";
 
 export default class Routes extends Component {
 	render() {
@@ -27,7 +33,7 @@ export default class Routes extends Component {
 		};
 
 		return (
-			<Router>
+			<Router history={browserHistory}>
 				<Switch>
 					<Route exact={true} path="/" component={Signup} />
 					<DefaultLayout path="/home" component={HomePage} />
@@ -35,6 +41,7 @@ export default class Routes extends Component {
 					<DefaultLayout path="/workflow" component={Workflow} />
 					<DefaultLayout path="/users" component={Users} />
 					<DefaultLayout path="/statistics" component={Statistics} />
+					<DefaultLayout path="/settings" component={Settings} />
 				</Switch>
 			</Router>
 		);

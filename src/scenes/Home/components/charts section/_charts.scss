@@ -34,5 +34,22 @@ $font-bold: 700;
 				margin-bottom: 10px;
 			}
 		}
+
+		&-btn {
+			background: none;
+			border-radius: 50%;
+			border: 1px solid rgba(132, 146, 175, 0.3);
+			cursor: pointer;
+			width: 30px;
+			height: 30px;
+			color: $color-title;
+			margin-left: 10px;
+			transition: 0.2s;
+
+			&:hover {
+				border: 1px solid $inner-header;
+				color: $inner-header;
+			}
+		}
 	}
 }

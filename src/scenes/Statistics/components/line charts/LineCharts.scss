@@ -2,15 +2,21 @@ $color-border: #dadee7;
 
 .linechart {
 	&.charts {
-		padding: 25px 0;
+		padding: 0;
+		height: 90%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
 	}
 
 	&-item {
-		padding: 30px 20px;
+		padding: 41.13px 20px;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 		border-bottom: 1px solid $color-border;
+		width: 100%;
 
 		&:last-child {
 			border-bottom: none;
@@ -21,4 +27,8 @@ $color-border: #dadee7;
 			margin-bottom: 10px;
 		}
 	}
+}
+
+.userchart {
+	height: 90%;
 }

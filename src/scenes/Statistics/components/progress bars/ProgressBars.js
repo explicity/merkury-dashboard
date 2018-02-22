@@ -52,6 +52,16 @@ export default class ProgressBars extends Component {
 			<div className="charts">
 				<div className="charts-header">
 					<h3 className="charts-header-title">Total sales</h3>
+					<div>
+						<button className="charts-header-btn">
+							<i className="fa fa-pencil" aria-hidden="true" />
+							<span className="sr-only">Edit</span>
+						</button>
+						<button className="charts-header-btn">
+							<i className="fa fa-trash" aria-hidden="true" />
+							<span className="sr-only">Delete</span>
+						</button>
+					</div>
 				</div>
 				<div className="container">
 					<div className="row">

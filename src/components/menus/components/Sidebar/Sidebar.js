@@ -11,16 +11,8 @@ export default class Sidebar extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: "1"
+      activeTab: localStorage.currentPage
     };
-  }
-
-  componentWillMount() {
-    if (this.state.activeTab !== localStorage.getItem("currentPage")) {
-      this.setState({
-        activeTab: localStorage.currentPage
-      });
-    }
   }
 
   toggle(tab) {
