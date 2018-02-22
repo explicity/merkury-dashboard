@@ -1,0 +1,76 @@
+$color-main: #8492af;
+$color-blue: #5484ff;
+$color-violet: #aa5fb9;
+$color-pink: #f83c7b;
+
+.progressbars {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 25px;
+
+	@media (max-width: 765px) {
+		margin-bottom: 35px;
+		justify-content: start;
+	}
+
+	&-item {
+		width: 50%;
+		margin-right: 25px;
+
+		@media (max-width: 1023px) {
+			margin-right: 15px;
+		}
+
+		.CircularProgressbar-path {
+			transform: rotate(180deg);
+			transform-origin: center center;
+		}
+
+		&-blue {
+			.CircularProgressbar-path {
+				stroke: $color-blue;
+			}
+
+			.CircularProgressbar-text {
+				fill: $color-blue;
+			}
+		}
+
+		&-violet {
+			.CircularProgressbar-path {
+				stroke: $color-violet;
+			}
+
+			.CircularProgressbar-text {
+				fill: $color-violet;
+			}
+		}
+
+		&-pink {
+			.CircularProgressbar-path {
+				stroke: $color-pink;
+			}
+
+			.CircularProgressbar-text {
+				fill: $color-pink;
+			}
+		}
+	}
+}
+
+.description {
+	color: $color-main;
+
+	p {
+		font-weight: 700;
+		font-size: 25px;
+		line-height: 32px;
+	}
+
+	p:last-child {
+		font-size: 15px;
+		font-weight: 300;
+		line-height: 16px;
+	}
+}

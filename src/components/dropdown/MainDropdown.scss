@@ -1,0 +1,37 @@
+$color-secondary: #8492af;
+$color-main: #0e1a35;
+
+.dropdown {
+	display: inline-block;
+
+	&.show .btn {
+		color: $color-secondary;
+	}
+
+	.btn {
+		border-radius: 24px;
+		font-size: 11px;
+		font-weight: 400;
+		width: 140px;
+		text-align: left;
+
+		&-secondary {
+			background-color: transparent;
+			color: $color-secondary;
+		}
+
+		.active {
+			color: $color-main;
+			font-weight: 700;
+			margin-right: 10px;
+		}
+	}
+
+	&-toggle:after {
+		vertical-align: middle;
+		right: 10px;
+		top: 50%;
+		transform: translateY(-50%);
+		position: absolute;
+	}
+}

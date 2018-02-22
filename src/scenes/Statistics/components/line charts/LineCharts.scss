@@ -1,0 +1,24 @@
+$color-border: #dadee7;
+
+.linechart {
+	&.charts {
+		padding: 25px 0;
+	}
+
+	&-item {
+		padding: 30px 20px;
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		border-bottom: 1px solid $color-border;
+
+		&:last-child {
+			border-bottom: none;
+		}
+
+		@media (max-width: 374px) {
+			flex-direction: column-reverse;
+			margin-bottom: 10px;
+		}
+	}
+}

@@ -2,17 +2,10 @@ import "./Users.scss";
 
 import React, { Component } from "react";
 
+import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 import _map from "lodash/map";
 
-import {
-	Pagination,
-	PaginationItem,
-	PaginationLink,
-	Dropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem
-} from "reactstrap";
+import MainDropdown from "./../../components/dropdown/MainDropdown.js";
 
 import EmailListItem from "./components/EmailListItem.js";
 
@@ -28,27 +21,17 @@ export default class Users extends Component {
 	constructor(props) {
 		super(props);
 
-		this.dropdownToggle = this.dropdownToggle.bind(this);
-		this.toggle = this.toggle.bind(this);
+		this.updateData = this.updateData.bind(this);
 		this.state = {
 			openDropdown: false,
 			activeTab: "Active first"
 		};
 	}
 
-	toggle(tab) {
-		if (this.state.activeTab !== tab) {
-			this.setState({
-				activeTab: tab
-			});
-		}
-	}
+	updateData = value => {
+		this.setState({ activeSort: value });
+	};
 
-	dropdownToggle() {
-		this.setState({
-			openDropdown: !this.state.openDropdown
-		});
-	}
 	render() {
 		const emailList = [
 			{
@@ -135,47 +118,16 @@ export default class Users extends Component {
 		return (
 			<div className="users">
 				<div className="container">
-					<div className="users-header">
-						<h2 className="section-title">
+					<div className="section-header">
+						<h2 className="section-header-title">
 							Users <span>(128)</span>
 						</h2>
-						<Dropdown
-							isOpen={this.state.openDropdown}
-							toggle={this.dropdownToggle}
-						>
-							<DropdownToggle caret>
-								Sort:{" "}
-								<span className="active">
-									{this.state.activeTab}
-								</span>
-							</DropdownToggle>
-							<DropdownMenu>
-								<DropdownItem
-									className={`${
-										this.state.activeTab === "Active first"
-											? "disabled"
-											: ""
-									}`}
-									onClick={() => {
-										this.toggle("Active first");
-									}}
-								>
-									Active first
-								</DropdownItem>
-								<DropdownItem
-									className={`${
-										this.state.activeTab === "By A-Z"
-											? "disabled"
-											: ""
-									}`}
-									onClick={() => {
-										this.toggle("By A-Z");
-									}}
-								>
-									By A-Z
-								</DropdownItem>
-							</DropdownMenu>
-						</Dropdown>
+						<MainDropdown
+							action="Sort"
+							activeTab="Active first"
+							anotherTab="By A-Z"
+							updateData={this.updateData}
+						/>
 					</div>
 					<div className="table-responsive-lg">
 						<table className="table table-bordered table-hover">

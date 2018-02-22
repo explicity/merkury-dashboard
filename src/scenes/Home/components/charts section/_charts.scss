@@ -14,16 +14,25 @@ $font-bold: 700;
 	background-color: $color-white;
 	padding: 20px;
 	margin-bottom: 25px;
+	border: 1px solid rgba(132, 146, 175, 0.3);
 
 	&-header {
-		display: flex;
-		justify-content: space-between;
 		margin-bottom: 25px;
+
+		@media (min-width: 375px) {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
 
 		&-title {
 			font-size: 25px;
 			color: $color-title;
 			font-weight: $font-bold;
+
+			@media (max-width: 374px) {
+				margin-bottom: 10px;
+			}
 		}
 	}
 }

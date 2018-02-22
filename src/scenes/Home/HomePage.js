@@ -2,8 +2,6 @@ import "./_home-page.scss";
 
 import React, { Component } from "react";
 
-import { Container, Row, Col } from "reactstrap";
-
 import ChartsSection from "./components/charts section/ChartsSection.js";
 import NotificationSection from "./components/notifications section/NotificationSection.js";
 
@@ -26,11 +24,11 @@ export default class HomePage extends Component {
 
 	render() {
 		return (
-			<Container>
+			<div className="container">
 				<h2 className="main-title">Hello {this.state.username}!</h2>
 				<ChartsSection />
 				<NotificationSection />
-			</Container>
+			</div>
 		);
 	}
 }
