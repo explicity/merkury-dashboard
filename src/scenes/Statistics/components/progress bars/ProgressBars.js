@@ -4,6 +4,8 @@ import "./ProgressBars.scss";
 import React, { Component } from "react";
 
 import CircularProgressbar from "react-circular-progressbar";
+import barsInfo from "./data.js";
+
 import _map from "lodash/map";
 
 const ProgressBarsItem = ({ info }) => (
@@ -25,29 +27,6 @@ const ProgressBarsItem = ({ info }) => (
 
 export default class ProgressBars extends Component {
 	render() {
-		const barsInfo = [
-			{
-				first_description: "2,300$",
-				second_description: "Direct Sales",
-				percentages: 45,
-				color: "blue"
-			},
-
-			{
-				first_description: "980$",
-				second_description: "Channel Sales",
-				percentages: 20,
-				color: "violet"
-			},
-
-			{
-				first_description: "1,250$",
-				second_description: "Channel Sales",
-				percentages: 25,
-				color: "pink"
-			}
-		];
-
 		return (
 			<div className="charts">
 				<div className="charts-header">
