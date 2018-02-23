@@ -61,17 +61,23 @@ export default class Navigation extends Component {
 		return (
 			<header className="header" id="nav">
 				<div className="navbar">
-					<div
-						className={`menu ${
-							this.state.isSidebarOpen
-								? "hvr-icon-back"
-								: "hvr-icon-forward"
-						}`}
-						onClick={this.toggleSidebar}
-					>
-						<div className="menu-ico">
-							<span className="sr-only">Open menu</span>
+					<div>
+						<div
+							className={`mr-2 menu ${
+								this.state.isSidebarOpen
+									? "hvr-icon-back"
+									: "hvr-icon-forward"
+							}`}
+							onClick={this.toggleSidebar}
+						>
+							<div className="menu-ico">
+								<span className="sr-only">Open menu</span>
+							</div>
 						</div>
+						<button className="header-main-btn vertical-middle">
+							<i className="fa fa-search" aria-hidden="true" />
+							<span className="sr-only">Search</span>
+						</button>
 					</div>
 
 					<div className="header-main">

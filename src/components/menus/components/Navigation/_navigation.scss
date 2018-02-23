@@ -64,7 +64,7 @@ $font-normal: 500;
 
 			.fa-plus {
 				margin-right: 5px;
-				color: $color-border;
+				color: $color-white;
 			}
 		}
 
@@ -79,6 +79,14 @@ $font-normal: 500;
 				vertical-align: middle;
 				font-size: 20px;
 				color: $inner-header;
+			}
+
+			.fa-search {
+				vertical-align: text-bottom;
+			}
+
+			&.vertical-middle {
+				vertical-align: middle;
 			}
 		}
 

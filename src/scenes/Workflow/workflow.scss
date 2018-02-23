@@ -6,6 +6,7 @@ $color-title-secondary: #8492af;
 
 	&-heading {
 		margin-bottom: 15px;
+		white-space: nowrap;
 
 		a {
 			color: $color-title;
