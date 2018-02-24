@@ -3,7 +3,7 @@ import { findDOMNode } from "react-dom";
 import { DragSource, DropTarget } from "react-dnd";
 import flow from "lodash/flow";
 
-import TaskItem from "./../../Home/components/notifications section/task section/components/TaskItem.js";
+import TaskItem from "./../../Home/components/notificationsSection/taskSection/components/TaskItem.js";
 
 class Card extends Component {
 	render() {

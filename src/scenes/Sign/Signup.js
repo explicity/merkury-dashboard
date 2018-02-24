@@ -77,7 +77,7 @@ export default class Signup extends Component {
               </NavItem>
             </Nav>
           </div>
-          <SignupTabs activeTab={this.state.activeTab} />
+          <SignupTabs activeTab={this.state.activeTab} update={this.toggle} />
         </div>
       </div>
     );

@@ -2,8 +2,8 @@ import "./_home-page.scss";
 
 import React, { Component } from "react";
 
-import ChartsSection from "./components/charts section/ChartsSection.js";
-import NotificationSection from "./components/notifications section/NotificationSection.js";
+import ChartsSection from "./components/chartsSection/ChartsSection.js";
+import NotificationSection from "./components/notificationsSection/NotificationSection.js";
 
 export default class HomePage extends Component {
 	constructor(props) {

@@ -2,10 +2,10 @@ import "./Statistics.scss";
 
 import React, { Component } from "react";
 
-import ProgressBars from "./components/progress bars/ProgressBars.js";
+import ProgressBars from "./components/progressBars/ProgressBars.js";
 import MainDropdown from "./../../components/dropdown/MainDropdown.js";
-import LineCharts from "./components/line charts/LineCharts.js";
-import UserLineChart from "./components/user linechart/UserLineChart.js";
+import LineCharts from "./components/lineCharts/LineCharts.js";
+import UserLineChart from "./components/userLineChart/UserLineChart.js";
 
 export default class Statistics extends Component {
 	constructor(props) {

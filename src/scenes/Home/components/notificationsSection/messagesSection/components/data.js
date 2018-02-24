@@ -25,7 +25,8 @@ export default [
 		url: User2,
 		user: "James Smith",
 		time: "2 days ago",
-		message: "Good morning, you are fired!"
+		message: "Good morning, you are fired!",
+		unreaded: true
 	},
 
 	{
@@ -49,6 +50,7 @@ export default [
 		url: User1,
 		user: "Nina Jones",
 		time: "About 2 weeks ago",
-		message: "Hello! Could You bring me coffee please?"
+		message: "Hello! Could You bring me coffee please?",
+		unreaded: true
 	}
 ];

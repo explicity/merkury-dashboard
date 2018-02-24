@@ -42,6 +42,8 @@ export default class Register extends Component {
 		document.getElementById("register-username").value = "";
 		document.getElementById("register-password").value = "";
 		document.getElementById("register-number").value = "";
+
+		this.props.update("2");
 	}
 
 	render() {
@@ -101,7 +103,7 @@ export default class Register extends Component {
 								placeholder="Password"
 								onChange={this.handleInputChange}
 							/>
-						</FormGroup>{" "}
+						</FormGroup>
 						<FormGroup>
 							<span>
 								<i
@@ -119,7 +121,7 @@ export default class Register extends Component {
 								placeholder="Phone number"
 								onChange={this.handleInputChange}
 							/>
-						</FormGroup>{" "}
+						</FormGroup>
 						<Button
 							className="hvr-icon-forward"
 							onClick={this.onRegisterPressed}

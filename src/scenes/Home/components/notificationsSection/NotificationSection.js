@@ -4,9 +4,9 @@ import React, { Component } from "react";
 
 import { Row, Col } from "reactstrap";
 
-import TaskSection from "./task section/TaskSection.js";
-import MessagesSection from "./messages section/MessagesSection.js";
-import ActivitySection from "./activity section/ActivitySection.js";
+import TaskSection from "./taskSection/TaskSection.js";
+import MessagesSection from "./messagesSection/MessagesSection.js";
+import ActivitySection from "./activitySection/ActivitySection.js";
 
 export default class NotificationSection extends Component {
 	render() {
