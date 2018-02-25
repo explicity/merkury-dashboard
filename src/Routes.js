@@ -1,19 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
 	BrowserRouter as Router,
 	Route,
 	Switch,
 	browserHistory
-} from "react-router-dom";
+} from 'react-router-dom';
 
-import Signup from "./scenes/Sign/Signup.js";
-import Menus from "./components/menus/Menus.js";
-import HomePage from "./scenes/Home/HomePage.js";
-import Workflow from "./scenes/Workflow/WorkFlow.js";
-import Calendar from "./scenes/Calendar/Calendar.js";
-import Users from "./scenes/Users/Users.js";
-import Statistics from "./scenes/Statistics/Statistics.js";
-import Settings from "./scenes/Settings/Settings.js";
+import Signup from './scenes/Sign/Signup.js';
+import Menus from './components/menus/Menus.js';
+import HomePage from './scenes/Home/HomePage.js';
+import Workflow from './scenes/Workflow/WorkFlow.js';
+import Calendar from './scenes/Calendar/Calendar.js';
+import Users from './scenes/Users/Users.js';
+import Statistics from './scenes/Statistics/Statistics.js';
+import Settings from './scenes/Settings/Settings.js';
 
 export default class Routes extends Component {
 	render() {

@@ -1,17 +1,17 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
 	Dropdown,
 	DropdownToggle,
 	DropdownMenu,
 	DropdownItem
-} from "reactstrap";
+} from 'reactstrap';
 
 export default class TaskItem extends Component {
 	render() {
 		const obj = this.props.obj;
 
 		return (
-			<li className="content-item">
+			<div className="content-item">
 				<img
 					src={obj.url}
 					alt="todo-img"
@@ -25,14 +25,14 @@ export default class TaskItem extends Component {
 						</h4>
 						{this.props.listId === 3 ? (
 							<div className="content-item-time completed">
-								<i className="fa fa-check-circle-o" />{" "}
+								<i className="fa fa-check-circle-o" />{' '}
 								<span>Completed!</span>
 							</div>
 						) : (
 							<div className="content-item-time">
 								<i className="fa fa-clock-o fa-fw" />
 								<span
-									className={`${obj.isDelayed && "active"}`}
+									className={`${obj.isDelayed && 'active'}`}
 								>
 									{obj.time}
 								</span>
@@ -45,7 +45,7 @@ export default class TaskItem extends Component {
 						<span className="sr-only">More options</span>
 					</button>
 				</div>
-			</li>
+			</div>
 		);
 	}
 }

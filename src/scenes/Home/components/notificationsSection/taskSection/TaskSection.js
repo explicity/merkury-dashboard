@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import _map from "lodash/map";
+import _map from 'lodash/map';
 
-import TaskItem from "./components/TaskItem.js";
-import taskData from "./components/data.js";
+import TaskItem from './components/TaskItem.js';
+import taskData from './components/data.js';
 
 export default class TaskSection extends Component {
 	render() {
@@ -23,13 +23,13 @@ export default class TaskSection extends Component {
 						</span>
 					</div>
 				</div>
-				<ul>
+				<div>
 					{_map(
 						taskData,
 						(item, index) =>
 							index < 4 && <TaskItem key={item.id} obj={item} />
 					)}
-				</ul>
+				</div>
 			</div>
 		);
 	}
