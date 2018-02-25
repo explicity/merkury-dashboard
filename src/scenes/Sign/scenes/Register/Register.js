@@ -1,24 +1,25 @@
-import React, { Component } from "react";
-import { TabPane, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import React, { Component } from 'react';
+import { TabPane, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class Register extends Component {
 	constructor(props) {
 		super(props);
 
+		this.clearValue = this.clearValue.bind(this);
 		this.onRegisterPressed = this.onRegisterPressed.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.state = {
-			email: "",
-			username: "",
-			password: "",
-			number: ""
+			email: '',
+			username: '',
+			password: '',
+			number: ''
 		};
 	}
 
 	handleInputChange(event) {
 		const target = event.target;
 		const value =
-			target.type === "checkbox" ? target.checked : target.value;
+			target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
 
 		this.setState({
@@ -36,14 +37,16 @@ export default class Register extends Component {
 			number: this.state.number
 		};
 
-		localStorage.setItem("usersRecord", JSON.stringify(userData));
+		localStorage.setItem('usersRecord', JSON.stringify(userData));
+		this.clearValue();
+		this.props.update('2');
+	}
 
-		document.getElementById("register-email").value = "";
-		document.getElementById("register-username").value = "";
-		document.getElementById("register-password").value = "";
-		document.getElementById("register-number").value = "";
-
-		this.props.update("2");
+	clearValue() {
+		document.getElementById('register-email').value = '';
+		document.getElementById('register-username').value = '';
+		document.getElementById('register-password').value = '';
+		document.getElementById('register-number').value = '';
 	}
 
 	render() {
@@ -68,7 +71,7 @@ export default class Register extends Component {
 								placeholder="Email"
 								onChange={this.handleInputChange}
 							/>
-						</FormGroup>{" "}
+						</FormGroup>
 						<FormGroup>
 							<span>
 								<i
@@ -85,7 +88,7 @@ export default class Register extends Component {
 								placeholder="Username"
 								onChange={this.handleInputChange}
 							/>
-						</FormGroup>{" "}
+						</FormGroup>
 						<FormGroup>
 							<span>
 								<i

@@ -1,11 +1,11 @@
-import "./_charts.scss";
+import './_charts.scss';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { Row, Col } from "reactstrap";
+import { Row, Col } from 'reactstrap';
 
-import LineChart from "./components/LineChart.js";
-import DoughnutChart from "./components/DoughnutChart.js";
+import LineChart from './components/LineChart.js';
+import DoughnutChart from './components/DoughnutChart.js';
 
 export default class ChartsSection extends Component {
 	render() {

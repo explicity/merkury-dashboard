@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Redirect } from "react-router";
+import React, { Component } from 'react';
+import { Redirect } from 'react-router';
 
-import { TabPane, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { TabPane, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class Login extends Component {
 	constructor(props) {
@@ -10,8 +10,8 @@ export default class Login extends Component {
 		this.isUserRegistered = this.isUserRegistered.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.state = {
-			username: "",
-			password: "",
+			username: '',
+			password: '',
 			haveAccess: false
 		};
 	}
@@ -19,7 +19,7 @@ export default class Login extends Component {
 	handleInputChange(event) {
 		const target = event.target;
 		const value =
-			target.type === "checkbox" ? target.checked : target.value;
+			target.type === 'checkbox' ? target.checked : target.value;
 		const name = target.name;
 
 		this.setState({
@@ -30,7 +30,7 @@ export default class Login extends Component {
 	isUserRegistered(event) {
 		event.preventDefault();
 
-		let usersArray = JSON.parse(localStorage.getItem("usersRecord"));
+		let usersArray = JSON.parse(localStorage.getItem('usersRecord'));
 
 		if (
 			this.state.username === usersArray.username &&
@@ -39,8 +39,8 @@ export default class Login extends Component {
 			this.setState({
 				haveAccess: true
 			});
-			localStorage.setItem("loggedIn", true);
-			localStorage.setItem("currentPage", 1);
+			localStorage.setItem('loggedIn', true);
+			localStorage.setItem('currentPage', 1);
 		}
 	}
 
@@ -71,7 +71,7 @@ export default class Login extends Component {
 								placeholder="Username"
 								onChange={this.handleInputChange}
 							/>
-						</FormGroup>{" "}
+						</FormGroup>
 						<FormGroup>
 							<span>
 								<i
@@ -89,7 +89,7 @@ export default class Login extends Component {
 								placeholder="Password"
 								onChange={this.handleInputChange}
 							/>
-						</FormGroup>{" "}
+						</FormGroup>
 						<Button
 							className="hvr-icon-forward"
 							onClick={this.isUserRegistered}
@@ -97,7 +97,7 @@ export default class Login extends Component {
 							Enter
 						</Button>
 					</Form>
-					{haveAccess && <Redirect to={"/home"} />}
+					{haveAccess && <Redirect to={'/home'} />}
 				</div>
 			</TabPane>
 		);

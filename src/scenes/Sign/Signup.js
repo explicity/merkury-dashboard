@@ -1,6 +1,6 @@
-import "./_signup-section.scss";
+import './_signup-section.scss';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   TabPane,
   Nav,
@@ -12,11 +12,11 @@ import {
   CardText,
   Row,
   Col
-} from "reactstrap";
+} from 'reactstrap';
 
-import SignupTabs from "./scenes/SignupTabs.js";
+import SignupTabs from './scenes/SignupTabs.js';
 
-import Logo from "./images/logo.png";
+import Logo from './images/logo.png';
 
 export default class Signup extends Component {
   constructor(props) {
@@ -24,7 +24,7 @@ export default class Signup extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: "2"
+      activeTab: '2'
     };
   }
 
@@ -57,9 +57,9 @@ export default class Signup extends Component {
             <Nav tabs>
               <NavItem>
                 <NavLink
-                  className={this.state.activeTab === "1" ? "active" : ""}
+                  className={this.state.activeTab === '1' ? 'active' : ''}
                   onClick={() => {
-                    this.toggle("1");
+                    this.toggle('1');
                   }}
                 >
                   Register
@@ -67,9 +67,9 @@ export default class Signup extends Component {
               </NavItem>
               <NavItem>
                 <NavLink
-                  className={this.state.activeTab === "2" ? "active" : ""}
+                  className={this.state.activeTab === '2' ? 'active' : ''}
                   onClick={() => {
-                    this.toggle("2");
+                    this.toggle('2');
                   }}
                 >
                   Login

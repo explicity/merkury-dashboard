@@ -1,10 +1,10 @@
-import "./_signup-tabs.scss";
+import './_signup-tabs.scss';
 
-import React, { Component } from "react";
-import { TabContent } from "reactstrap";
+import React, { Component } from 'react';
+import { TabContent } from 'reactstrap';
 
-import Login from "./Login/Login.js";
-import Register from "./Register/Register.js";
+import Login from './Login/Login.js';
+import Register from './Register/Register.js';
 
 export default class SignupTabs extends Component {
 	constructor(props) {
