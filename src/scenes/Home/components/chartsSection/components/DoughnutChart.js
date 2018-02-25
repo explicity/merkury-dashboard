@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { Doughnut } from "react-chartjs-2";
+import { Doughnut } from 'react-chartjs-2';
 
-import MainDropdown from "../../../../../components/dropdown/MainDropdown.js";
+import MainDropdown from '../../../../../components/dropdown/MainDropdown.js';
 
 export default class DoughnutChart extends Component {
 	constructor(props) {
@@ -10,7 +10,7 @@ export default class DoughnutChart extends Component {
 
 		this.updateData = this.updateData.bind(this);
 		this.state = {
-			name: "Last Year"
+			name: 'Last Year'
 		};
 	}
 
@@ -21,21 +21,21 @@ export default class DoughnutChart extends Component {
 	render() {
 		const chartsLastData = {
 			labels: [
-				"Websites",
-				"Logo",
-				"Social Media",
-				"Adwords",
-				"E-Commerce"
+				'Websites',
+				'Logo',
+				'Social Media',
+				'Adwords',
+				'E-Commerce'
 			],
 			datasets: [
 				{
-					label: "Sales",
+					label: 'Sales',
 					backgroundColor: [
-						"#25396e",
-						"#5584ff",
-						"#4b74e0",
-						"#4164c2",
-						"#3755a4"
+						'#25396e',
+						'#5584ff',
+						'#4b74e0',
+						'#4164c2',
+						'#3755a4'
 					],
 					data: [472, 383, 349, 194, 162]
 				}
@@ -44,21 +44,21 @@ export default class DoughnutChart extends Component {
 
 		const chartsThisData = {
 			labels: [
-				"Websites",
-				"Logo",
-				"Social Media",
-				"Adwords",
-				"E-Commerce"
+				'Websites',
+				'Logo',
+				'Social Media',
+				'Adwords',
+				'E-Commerce'
 			],
 			datasets: [
 				{
-					label: "Sales",
+					label: 'Sales',
 					backgroundColor: [
-						"#25396e",
-						"#5584ff",
-						"#4b74e0",
-						"#4164c2",
-						"#3755a4"
+						'#25396e',
+						'#5584ff',
+						'#4b74e0',
+						'#4164c2',
+						'#3755a4'
 					],
 					data: [21, 704, 92, 672, 71]
 				}
@@ -76,10 +76,10 @@ export default class DoughnutChart extends Component {
 						updateData={this.updateData}
 					/>
 				</header>
-				{this.state.name === "Last Year" && (
+				{this.state.name === 'Last Year' && (
 					<Doughnut data={chartsLastData} />
 				)}
-				{this.state.name === "This Year" && (
+				{this.state.name === 'This Year' && (
 					<Doughnut data={chartsThisData} />
 				)}
 			</div>

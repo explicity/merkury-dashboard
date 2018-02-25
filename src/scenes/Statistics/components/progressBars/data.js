@@ -1,22 +1,28 @@
 export default [
 	{
-		first_description: "2,300$",
-		second_description: "Direct Sales",
+		description: {
+			first: '2,300$',
+			second: 'Direct Sales'
+		},
 		percentages: 45,
-		color: "blue"
+		color: 'blue'
 	},
 
 	{
-		first_description: "980$",
-		second_description: "Channel Sales",
+		description: {
+			first: '980$',
+			second: 'Channel Sales'
+		},
 		percentages: 20,
-		color: "violet"
+		color: 'violet'
 	},
 
 	{
-		first_description: "1,250$",
-		second_description: "Channel Sales",
+		description: {
+			first: '1,250$',
+			second: 'Channel Sales'
+		},
 		percentages: 25,
-		color: "pink"
+		color: 'pink'
 	}
 ];

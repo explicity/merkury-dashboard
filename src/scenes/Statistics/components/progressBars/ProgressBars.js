@@ -1,12 +1,12 @@
-import "react-circular-progressbar/dist/styles.css";
-import "./ProgressBars.scss";
+import 'react-circular-progressbar/dist/styles.css';
+import './ProgressBars.scss';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import CircularProgressbar from "react-circular-progressbar";
-import barsInfo from "./data.js";
+import CircularProgressbar from 'react-circular-progressbar';
+import barsInfo from './data.js';
 
-import _map from "lodash/map";
+import _map from 'lodash/map';
 
 const ProgressBarsItem = ({ info }) => (
 	<div className="col-12 col-md-4">
@@ -18,8 +18,8 @@ const ProgressBarsItem = ({ info }) => (
 				/>
 			</div>
 			<div className="description">
-				<p>{info.first_description}</p>
-				<p>{info.second_description}</p>
+				<p>{info.description.first}</p>
+				<p>{info.description.second}</p>
 			</div>
 		</div>
 	</div>
