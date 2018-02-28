@@ -216,7 +216,7 @@ export default class Workflow extends Component {
 																			key={
 																				item.id
 																			}
-																			obj={
+																			item={
 																				item
 																			}
 																			listId={
@@ -287,7 +287,7 @@ export default class Workflow extends Component {
 																			key={
 																				item.id
 																			}
-																			obj={
+																			item={
 																				item
 																			}
 																			listId={
@@ -358,7 +358,7 @@ export default class Workflow extends Component {
 																			key={
 																				item.id
 																			}
-																			obj={
+																			item={
 																				item
 																			}
 																			listId={

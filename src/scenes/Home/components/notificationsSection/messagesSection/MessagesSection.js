@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import _map from "lodash/map";
+import _map from 'lodash/map';
 
-import MessagesItem from "./components/MessagesItem.js";
-import messagesData from "./components/data.js";
+import MessagesItem from './components/MessagesItem.js';
+import messagesData from './components/data.js';
 
 export default class MessagesSection extends Component {
 	render() {
@@ -26,7 +26,7 @@ export default class MessagesSection extends Component {
 						messagesData,
 						(item, index) =>
 							index < 4 && (
-								<MessagesItem key={item.id} obj={item} />
+								<MessagesItem key={item.id} item={item} />
 							)
 					)}
 				</ul>

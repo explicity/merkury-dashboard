@@ -79,14 +79,27 @@ $font-normal: 500;
 				vertical-align: middle;
 				font-size: 20px;
 				color: $inner-header;
+
+				&.fa-search {
+					vertical-align: text-top;
+				}
 			}
 
-			.fa-search {
-				vertical-align: text-bottom;
+			&.hvr-icon-forward {
+				padding-right: 11px;
+				margin-right: 10px;
+
+				&:before {
+					right: 0;
+				}
 			}
 
-			&.vertical-middle {
-				vertical-align: middle;
+			&.hvr-icon-back {
+				padding-left: 11px;
+
+				&:before {
+					left: 0;
+				}
 			}
 		}
 
@@ -140,7 +153,7 @@ $font-normal: 500;
 
 		&:before,
 		&:after {
-			content: "";
+			content: '';
 			position: absolute;
 			width: 20px;
 			height: 3px;
@@ -159,12 +172,46 @@ $font-normal: 500;
 	&.hvr-icon-forward:before {
 		margin-top: -1px;
 		color: $inner-header;
-		content: "\f0da";
+		content: '\f0da';
 		right: 0;
 		padding-right: 3px;
 	}
 }
 
+.hvr-icon-back {
+	display: inline-block;
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px transparent;
+	position: relative;
+	padding-left: 2.2em;
+	-webkit-transition-duration: 0.1s;
+	transition-duration: 0.1s;
+}
+.hvr-icon-back:before {
+	content: '\f0d9';
+	position: absolute;
+	left: 1em;
+	padding: 0 1px;
+	font-family: FontAwesome;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	-webkit-transition-duration: 0.1s;
+	transition-duration: 0.1s;
+	-webkit-transition-property: transform;
+	transition-property: transform;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.hvr-icon-back:hover:before,
+.hvr-icon-back:focus:before,
+.hvr-icon-back:active:before {
+	-webkit-transform: translateX(-4px);
+	transform: translateX(-4px);
+}
+
+/* Icon Forward */
 .hvr-icon-forward {
 	display: inline-block;
 	vertical-align: middle;
@@ -177,7 +224,7 @@ $font-normal: 500;
 	transition-duration: 0.1s;
 }
 .hvr-icon-forward:before {
-	content: "\f105";
+	content: '\f0da';
 	position: absolute;
 	right: 1em;
 	padding: 0 1px;
@@ -196,43 +243,6 @@ $font-normal: 500;
 .hvr-icon-forward:active:before {
 	-webkit-transform: translateX(4px);
 	transform: translateX(4px);
-}
-
-.hvr-icon-back {
-	display: inline-block;
-	vertical-align: middle;
-	-webkit-transform: perspective(1px) translateZ(0);
-	transform: perspective(1px) translateZ(0);
-	box-shadow: 0 0 1px transparent;
-	position: relative;
-	padding-left: 2.2em;
-	-webkit-transition-duration: 0.1s;
-	transition-duration: 0.1s;
-}
-.hvr-icon-back:before {
-	color: $inner-header;
-	margin-top: -1px;
-	color: $inner-header;
-	padding-left: 3px;
-	content: "\f0d9";
-	position: absolute;
-	left: 0;
-	height: 100%;
-	font-family: FontAwesome;
-	-webkit-transform: translateZ(0);
-	transform: translateZ(0);
-	-webkit-transition-duration: 0.1s;
-	transition-duration: 0.1s;
-	-webkit-transition-property: transform;
-	transition-property: transform;
-	-webkit-transition-timing-function: ease-out;
-	transition-timing-function: ease-out;
-}
-.hvr-icon-back:hover:before,
-.hvr-icon-back:focus:before,
-.hvr-icon-back:active:before {
-	-webkit-transform: translateX(-4px);
-	transform: translateX(-4px);
 }
 
 @-webkit-keyframes hvr-icon-hang {
@@ -287,7 +297,7 @@ $font-normal: 500;
 	transition-duration: 0.3s;
 }
 .hvr-icon-hang:before {
-	content: "\f0d7";
+	content: '\f0d7';
 	position: absolute;
 	margin-top: 6px;
 	right: 0;

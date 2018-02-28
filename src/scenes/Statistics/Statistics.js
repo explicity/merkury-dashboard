@@ -1,11 +1,11 @@
-import "./Statistics.scss";
+import './Statistics.scss';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import ProgressBars from "./components/progressBars/ProgressBars.js";
-import MainDropdown from "./../../components/dropdown/MainDropdown.js";
-import LineCharts from "./components/lineCharts/LineCharts.js";
-import UserLineChart from "./components/userLineChart/UserLineChart.js";
+import ProgressBars from './components/progressBars/ProgressBars.js';
+import MainDropdown from './../../components/dropdown/mainDropdown/MainDropdown.js';
+import LineCharts from './components/lineCharts/LineCharts.js';
+import UserLineChart from './components/userLineChart/UserLineChart.js';
 
 export default class Statistics extends Component {
 	constructor(props) {
@@ -14,8 +14,8 @@ export default class Statistics extends Component {
 		this.updateDataType = this.updateDataType.bind(this);
 		this.updateDataPerioud = this.updateDataPerioud.bind(this);
 		this.state = {
-			activeType: "Notifications",
-			activePerioud: "Last Month"
+			activeType: 'Notifications',
+			activePerioud: 'Last Month'
 		};
 	}
 

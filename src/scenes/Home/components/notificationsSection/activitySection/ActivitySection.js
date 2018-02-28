@@ -1,9 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import _map from "lodash/map";
+import _map from 'lodash/map';
 
-import ActivityItem from "./components/ActivityItem.js";
-import activityData from "./components/data.js";
+import ActivityItem from './components/ActivityItem.js';
+import activityData from './components/data.js';
 
 export default class ActivitySection extends Component {
 	render() {
@@ -25,7 +25,7 @@ export default class ActivitySection extends Component {
 						activityData,
 						(item, index) =>
 							index < 4 && (
-								<ActivityItem key={item.id} obj={item} />
+								<ActivityItem key={item.id} item={item} />
 							)
 					)}
 				</ul>

@@ -1,14 +1,14 @@
-import "./Users.scss";
+import './Users.scss';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
-import _map from "lodash/map";
+import { Pagination, PaginationItem, PaginationLink } from 'reactstrap';
+import _map from 'lodash/map';
 
-import MainDropdown from "./../../components/dropdown/MainDropdown.js";
+import MainDropdown from './../../components/dropdown/mainDropdown/MainDropdown.js';
 
-import EmailListItem from "./components/EmailListItem.js";
-import emailList from "./components/data.js";
+import EmailListItem from './components/EmailListItem.js';
+import emailList from './components/data.js';
 
 export default class Users extends Component {
 	constructor(props) {
@@ -17,7 +17,7 @@ export default class Users extends Component {
 		this.updateData = this.updateData.bind(this);
 		this.state = {
 			openDropdown: false,
-			activeTab: "Active first"
+			activeTab: 'Active first'
 		};
 	}
 
@@ -53,7 +53,7 @@ export default class Users extends Component {
 							</thead>
 							<tbody>
 								{_map(emailList, (item, index) => (
-									<EmailListItem key={index} obj={item} />
+									<EmailListItem key={index} user={item} />
 								))}
 							</tbody>
 						</table>

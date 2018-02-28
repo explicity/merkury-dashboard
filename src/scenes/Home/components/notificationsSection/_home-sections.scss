@@ -168,22 +168,5 @@ $font-bold: 700;
 			align-items: center;
 			flex-wrap: nowrap;
 		}
-
-		.btn {
-			background-color: transparent;
-			border: none;
-			color: #8492af;
-
-			.fa-ellipsis-v {
-				vertical-align: middle;
-				font-size: 30px;
-			}
-
-			&:active,
-			&:focused {
-				border-color: transparent;
-				border: none;
-			}
-		}
 	}
 }

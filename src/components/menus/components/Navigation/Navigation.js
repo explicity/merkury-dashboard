@@ -1,16 +1,16 @@
-import "./_navigation.scss";
+import './_navigation.scss';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
 	Dropdown,
 	DropdownToggle,
 	DropdownMenu,
 	DropdownItem
-} from "reactstrap";
-import { Link } from "react-router-dom";
-import { Redirect } from "react-router";
+} from 'reactstrap';
+import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
-import Avatar from "./user.jpg";
+import Avatar from './user.jpg';
 
 export default class Navigation extends Component {
 	constructor(props) {
@@ -31,16 +31,16 @@ export default class Navigation extends Component {
 			this.setState({
 				isSidebarOpen: !this.state.isSidebarOpen
 			});
-			document.getElementById("aside").classList.remove("opened");
-			document.getElementById("main").classList.remove("active");
-			document.getElementById("nav").classList.remove("active");
+			document.getElementById('aside').classList.remove('opened');
+			document.getElementById('main').classList.remove('active');
+			document.getElementById('nav').classList.remove('active');
 		} else {
 			this.setState({
 				isSidebarOpen: !this.state.isSidebarOpen
 			});
-			document.getElementById("aside").classList.add("opened");
-			document.getElementById("main").classList.add("active");
-			document.getElementById("nav").classList.add("active");
+			document.getElementById('aside').classList.add('opened');
+			document.getElementById('main').classList.add('active');
+			document.getElementById('nav').classList.add('active');
 		}
 	}
 
@@ -61,20 +61,19 @@ export default class Navigation extends Component {
 		return (
 			<header className="header" id="nav">
 				<div className="navbar">
-					<div>
-						<div
-							className={`mr-2 menu ${
+					<div className="d-flex align-items-center">
+						<a
+							className={`header-main-btn ${
 								this.state.isSidebarOpen
-									? "hvr-icon-back"
-									: "hvr-icon-forward"
+									? 'hvr-icon-back'
+									: 'hvr-icon-forward'
 							}`}
 							onClick={this.toggleSidebar}
 						>
-							<div className="menu-ico">
-								<span className="sr-only">Open menu</span>
-							</div>
-						</div>
-						<button className="header-main-btn vertical-middle">
+							<i className="fa fa-bars" aria-hidden="true" />
+							<span className="sr-only">Toggle sidebar</span>
+						</a>
+						<button className="header-main-btn">
 							<i className="fa fa-search" aria-hidden="true" />
 							<span className="sr-only">Search</span>
 						</button>
@@ -125,7 +124,7 @@ export default class Navigation extends Component {
 										Log Out
 									</Link>
 									{!this.state.isLoggedIn && (
-										<Redirect to={"/"} />
+										<Redirect to={'/'} />
 									)}
 								</DropdownItem>
 							</DropdownMenu>

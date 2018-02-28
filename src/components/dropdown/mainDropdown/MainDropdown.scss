@@ -4,15 +4,20 @@ $color-main: #0e1a35;
 .dropdown {
 	display: inline-block;
 
+	&.dropdown-main {
+		.btn {
+			width: 140px;
+			border-radius: 24px;
+		}
+	}
+
 	&.show .btn {
 		color: $color-secondary;
 	}
 
 	.btn {
-		border-radius: 24px;
 		font-size: 11px;
 		font-weight: 400;
-		width: 140px;
 		text-align: left;
 
 		&-secondary {

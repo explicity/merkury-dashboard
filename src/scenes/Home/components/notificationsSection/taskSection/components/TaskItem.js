@@ -1,19 +1,15 @@
 import React, { Component } from 'react';
-import {
-	Dropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem
-} from 'reactstrap';
+
+import ItemDropdown from '../../../../../../components/dropdown/itemDropdown/ItemDropdown.js';
 
 export default class TaskItem extends Component {
 	render() {
-		const obj = this.props.obj;
+		const item = this.props.item;
 
 		return (
 			<div className="content-item">
 				<img
-					src={obj.url}
+					src={item.url}
 					alt="todo-img"
 					style={{ width: 50, height: 50 }}
 					className="content-item-img"
@@ -21,7 +17,7 @@ export default class TaskItem extends Component {
 				<div className="row">
 					<div>
 						<h4>
-							<a className="content-item-title">{obj.title}</a>
+							<a className="content-item-title">{item.title}</a>
 						</h4>
 						{this.props.listId === 3 ? (
 							<div className="content-item-time completed">
@@ -32,18 +28,14 @@ export default class TaskItem extends Component {
 							<div className="content-item-time">
 								<i className="fa fa-clock-o fa-fw" />
 								<span
-									className={`${obj.isDelayed && 'active'}`}
+									className={`${item.isDelayed && 'active'}`}
 								>
-									{obj.time}
+									{item.time}
 								</span>
 							</div>
 						)}
 					</div>
-
-					<button className="btn">
-						<i className="fa fa-ellipsis-v" />
-						<span className="sr-only">More options</span>
-					</button>
+					<ItemDropdown />
 				</div>
 			</div>
 		);

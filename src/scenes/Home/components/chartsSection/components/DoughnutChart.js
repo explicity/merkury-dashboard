@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 import { Doughnut } from 'react-chartjs-2';
 
-import MainDropdown from '../../../../../components/dropdown/MainDropdown.js';
+import MainDropdown from '../../../../../components/dropdown/mainDropdown/MainDropdown.js';
+import data from './data/doughnutData.js';
 
 export default class DoughnutChart extends Component {
 	constructor(props) {
@@ -19,52 +20,6 @@ export default class DoughnutChart extends Component {
 	};
 
 	render() {
-		const chartsLastData = {
-			labels: [
-				'Websites',
-				'Logo',
-				'Social Media',
-				'Adwords',
-				'E-Commerce'
-			],
-			datasets: [
-				{
-					label: 'Sales',
-					backgroundColor: [
-						'#25396e',
-						'#5584ff',
-						'#4b74e0',
-						'#4164c2',
-						'#3755a4'
-					],
-					data: [472, 383, 349, 194, 162]
-				}
-			]
-		};
-
-		const chartsThisData = {
-			labels: [
-				'Websites',
-				'Logo',
-				'Social Media',
-				'Adwords',
-				'E-Commerce'
-			],
-			datasets: [
-				{
-					label: 'Sales',
-					backgroundColor: [
-						'#25396e',
-						'#5584ff',
-						'#4b74e0',
-						'#4164c2',
-						'#3755a4'
-					],
-					data: [21, 704, 92, 672, 71]
-				}
-			]
-		};
-
 		return (
 			<div className="charts">
 				<header className="charts-header">
@@ -77,10 +32,10 @@ export default class DoughnutChart extends Component {
 					/>
 				</header>
 				{this.state.name === 'Last Year' && (
-					<Doughnut data={chartsLastData} />
+					<Doughnut data={data.lastYear} />
 				)}
 				{this.state.name === 'This Year' && (
-					<Doughnut data={chartsThisData} />
+					<Doughnut data={data.thisYear} />
 				)}
 			</div>
 		);

@@ -27,7 +27,7 @@ export default class TaskSection extends Component {
 					{_map(
 						taskData,
 						(item, index) =>
-							index < 4 && <TaskItem key={item.id} obj={item} />
+							index < 4 && <TaskItem key={item.id} item={item} />
 					)}
 				</div>
 			</div>

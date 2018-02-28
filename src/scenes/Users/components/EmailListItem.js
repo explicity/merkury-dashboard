@@ -1,12 +1,14 @@
-import "./EmailListItem.scss";
+import './EmailListItem.scss';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { Badge } from "reactstrap";
+import { Badge } from 'reactstrap';
+
+import ItemDropdown from './../../../components/dropdown/itemDropdown/ItemDropdown.js';
 
 export default class EmailListItem extends Component {
 	render() {
-		const obj = this.props.obj;
+		const user = this.props.user;
 
 		return (
 			<tr className="table-item">
@@ -14,35 +16,32 @@ export default class EmailListItem extends Component {
 					<div className="username">
 						<a href="/users" className="username-logo">
 							<img
-								src={obj.url}
+								src={user.url}
 								alt="user"
 								style={{ width: 50, height: 50 }}
 							/>
-							{obj.online && <Badge color="success"> </Badge>}
+							{user.online && <Badge color="success"> </Badge>}
 						</a>
 						<div>
-							<a>{obj.name.main}</a>
+							<a>{user.name.main}</a>
 							<p className="username-secondary">
-								{obj.name.secondary}
+								{user.name.secondary}
 							</p>
 						</div>
 					</div>
 				</th>
 				<td
 					className={`table-item-activity ${
-						obj.online ? "active" : ""
+						user.online ? 'active' : ''
 					}`}
 				>
 					<i className="fa fa-clock-o fa-fw" />
-					<span>{obj.online ? "Online now!" : obj.activity}</span>
+					<span>{user.online ? 'Online now!' : user.activity}</span>
 				</td>
-				<td>{obj.email}</td>
-				<td>{obj.phone}</td>
+				<td>{user.email}</td>
+				<td>{user.phone}</td>
 				<td className="text-center">
-					<button className="btn">
-						<i className="fa fa-ellipsis-v" />
-						<span className="sr-only">More options</span>
-					</button>
+					<ItemDropdown />
 				</td>
 			</tr>
 		);

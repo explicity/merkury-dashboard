@@ -1,13 +1,13 @@
-import "./MainDropdown.scss";
+import './MainDropdown.scss';
 
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 import {
 	Dropdown,
 	DropdownToggle,
 	DropdownMenu,
 	DropdownItem
-} from "reactstrap";
+} from 'reactstrap';
 
 export default class MainDropdown extends Component {
 	constructor(props) {
@@ -38,6 +38,7 @@ export default class MainDropdown extends Component {
 	render() {
 		return (
 			<Dropdown
+				className="dropdown-main"
 				isOpen={this.state.dropdownOpen}
 				toggle={this.toggleDropdown}
 			>
@@ -49,8 +50,8 @@ export default class MainDropdown extends Component {
 					<DropdownItem
 						className={`${
 							this.state.activeTab === this.props.activeTab
-								? "disabled"
-								: ""
+								? 'disabled'
+								: ''
 						}`}
 						onClick={() => {
 							this.toggle(this.props.activeTab);
@@ -62,8 +63,8 @@ export default class MainDropdown extends Component {
 					<DropdownItem
 						className={`${
 							this.state.activeTab === this.props.anotherTab
-								? "disabled"
-								: ""
+								? 'disabled'
+								: ''
 						}`}
 						onClick={() => {
 							this.toggle(this.props.anotherTab);

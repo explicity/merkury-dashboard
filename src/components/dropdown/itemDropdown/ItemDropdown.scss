@@ -1,0 +1,19 @@
+.item-dropdown {
+	position: static;
+
+	.btn {
+		background-color: transparent;
+		border: none;
+		color: #8492af;
+
+		.fa-ellipsis-v {
+			vertical-align: middle;
+			font-size: 30px;
+		}
+
+		&:focus {
+			border-color: transparent;
+			border: none;
+		}
+	}
+}

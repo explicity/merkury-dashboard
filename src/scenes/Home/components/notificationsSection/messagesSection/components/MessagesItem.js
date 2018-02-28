@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default class MessagesItem extends Component {
 	constructor(props) {
@@ -13,8 +13,8 @@ export default class MessagesItem extends Component {
 	}
 
 	readMessage() {
-		if (this.props.obj.unreaded) {
-			this.props.obj.unreaded = false;
+		if (this.props.item.unreaded) {
+			this.props.item.unreaded = false;
 			this.setState({
 				isUnreaded: false
 			});
@@ -22,17 +22,17 @@ export default class MessagesItem extends Component {
 	}
 
 	render() {
-		const obj = this.props.obj;
+		const item = this.props.item;
 
 		return (
 			<li
-				className={`content-item users-message ${obj.unreaded &&
+				className={`content-item users-message ${item.unreaded &&
 					this.state.isUnreaded &&
-					"active"}`}
+					'active'}`}
 			>
 				<a href="">
 					<img
-						src={obj.url}
+						src={item.url}
 						alt="user-img"
 						style={{ width: 50, height: 50 }}
 						className="content-item-img"
@@ -40,12 +40,12 @@ export default class MessagesItem extends Component {
 				</a>
 				<div className="content-item-message">
 					<span className="content-item-user">
-						<a href="">{obj.user}</a>
+						<a href="">{item.user}</a>
 					</span>
 					<span className="content-item-time">
-						<span>{obj.time}</span>
+						<span>{item.time}</span>
 					</span>
-					<p>{obj.message}</p>
+					<p>{item.message}</p>
 					<Link to="/home" onClick={this.readMessage}>
 						<i className="fa fa-reply fa-fw" aria-hidden="true" />
 						<span className="sr-only">Reply</span>

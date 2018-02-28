@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
 export default class ActivityItem extends Component {
 	render() {
-		const obj = this.props.obj;
+		const item = this.props.item;
 
 		return (
 			<li className="content-item users-activity">
 				<a href="">
 					<img
-						src={obj.url}
+						src={item.url}
 						alt="user-img"
 						style={{ width: 50, height: 50 }}
 						className="content-item-img"
@@ -17,18 +17,18 @@ export default class ActivityItem extends Component {
 				<div className="content-item-message">
 					<div>
 						<span className="content-item-user">
-							<a href="">{obj.user} </a>
+							<a href="">{item.user} </a>
 						</span>
 						<span className="content-item-action">
-							{obj.action}{" "}
+							{item.action}{' '}
 						</span>
 						<span className="content-item-project">
-							<a>{obj.project}</a>
+							<a>{item.project}</a>
 						</span>
 					</div>
 					<div className="content-item-time">
 						<i className="fa fa-clock-o fa-fw" />
-						<span>{obj.time}</span>
+						<span>{item.time}</span>
 					</div>
 				</div>
 			</li>
