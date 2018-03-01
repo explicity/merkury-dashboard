@@ -5,12 +5,18 @@ import {
 	Dropdown,
 	DropdownToggle,
 	DropdownMenu,
-	DropdownItem
+	DropdownItem,
+	InputGroup,
+	InputGroupAddon,
+	InputGroupText,
+	Input
 } from 'reactstrap';
+import MediaQuery from 'react-responsive';
 import { Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
 import Avatar from './user.jpg';
+import SearchBox from './components/SearchBox';
 
 export default class Navigation extends Component {
 	constructor(props) {
@@ -19,10 +25,12 @@ export default class Navigation extends Component {
 		this.clearStorage = this.clearStorage.bind(this);
 		this.toggleDropdown = this.toggleDropdown.bind(this);
 		this.toggleSidebar = this.toggleSidebar.bind(this);
+		this.updateData = this.updateData.bind(this);
 		this.state = {
 			isLoggedIn: true,
 			isSidebarOpen: false,
-			dropdownOpen: false
+			dropdownOpen: false,
+			isSearchOpen: false
 		};
 	}
 
@@ -42,6 +50,10 @@ export default class Navigation extends Component {
 			document.getElementById('main').classList.add('active');
 			document.getElementById('nav').classList.add('active');
 		}
+	}
+
+	updateData() {
+		this.setState({ isSearchOpen: !this.state.isSearchOpen });
 	}
 
 	toggleDropdown() {
@@ -73,17 +85,25 @@ export default class Navigation extends Component {
 							<i className="fa fa-bars" aria-hidden="true" />
 							<span className="sr-only">Toggle sidebar</span>
 						</a>
-						<button className="header-main-btn">
-							<i className="fa fa-search" aria-hidden="true" />
-							<span className="sr-only">Search</span>
-						</button>
+						<SearchBox updateData={this.updateData} />
 					</div>
 
-					<div className="header-main">
-						<a className="btn btn-primary">
-							<i className="fa fa-plus" aria-hidden="true" />
-							<span>Add project</span>
-						</a>
+					<div
+						className={`header-main ${this.state.isSearchOpen &&
+							'open'}`}
+					>
+						<MediaQuery minDeviceWidth={510}>
+							<a className="btn btn-primary">
+								<i className="fa fa-plus" aria-hidden="true" />
+								<span>Add project</span>
+							</a>
+						</MediaQuery>
+						<MediaQuery maxDeviceWidth={511}>
+							<button className="header-main-btn">
+								<i className="fa fa-plus" aria-hidden="true" />
+								<span className="sr-only">Add project</span>
+							</button>
+						</MediaQuery>
 						<button className="header-main-btn">
 							<i className="fa fa-envelope" aria-hidden="true" />
 							<span className="sr-only">Mails</span>

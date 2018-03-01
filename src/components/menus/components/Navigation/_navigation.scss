@@ -23,7 +23,7 @@ $font-normal: 500;
 	&.active {
 		width: calc(100% - 200px);
 
-		@media (max-width: 424px) {
+		@media (max-width: 435px) {
 			.header-main {
 				opacity: 0;
 			}
@@ -33,14 +33,22 @@ $font-normal: 500;
 	.navbar {
 		height: 70px;
 		flex-wrap: nowrap;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
 	&-main {
 		display: flex;
 		flex-wrap: nowrap;
 		align-items: center;
-		transition: 0.2s;
+		transition: 0.3s;
 		opacity: 1;
+
+		&.open {
+			@media (max-width: 475px) {
+				opacity: 0;
+			}
+		}
 
 		.btn {
 			padding: 5px 20px;
@@ -50,10 +58,6 @@ $font-normal: 500;
 			letter-spacing: 0.24px;
 			margin-right: 25px;
 			vertical-align: baseline;
-
-			@media (max-width: 510px) {
-				display: none;
-			}
 
 			&-primary {
 				color: $color-white !important;
@@ -75,19 +79,33 @@ $font-normal: 500;
 			margin-right: 15px;
 			cursor: pointer;
 
+			&:focus {
+				border: none;
+				outline: none;
+			}
+
 			.fa {
 				vertical-align: middle;
 				font-size: 20px;
 				color: $inner-header;
 
 				&.fa-search {
-					vertical-align: text-top;
+					font-size: 19px;
+
+					&.open {
+						color: $inner-secondary;
+					}
+				}
+
+				&.fa-plus {
+					vertical-align: bottom;
 				}
 			}
 
 			&.hvr-icon-forward {
 				padding-right: 11px;
 				margin-right: 10px;
+				color: $inner-secondary !important;
 
 				&:before {
 					right: 0;
@@ -96,6 +114,7 @@ $font-normal: 500;
 
 			&.hvr-icon-back {
 				padding-left: 11px;
+				color: $inner-secondary !important;
 
 				&:before {
 					left: 0;
@@ -130,51 +149,20 @@ $font-normal: 500;
 			}
 		}
 	}
-}
 
-.menu {
-	cursor: pointer;
-	width: 45px;
-	height: 21px;
-	position: relative;
+	.search-box {
+		transition: 0.5s;
+		display: flex;
 
-	@media (min-width: 765px) {
-		margin-bottom: 2px;
-	}
+		.input-group {
+			vertical-align: middle;
 
-	&-ico {
-		width: 20px;
-		height: 3px;
-		background-color: $inner-header;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-
-		&:before,
-		&:after {
-			content: '';
-			position: absolute;
-			width: 20px;
-			height: 3px;
-			background-color: $inner-header;
+			input {
+				opacity: 0;
+				visibility: hidden;
+				transition: 0.5s;
+			}
 		}
-
-		&:before {
-			top: -6px;
-		}
-
-		&:after {
-			top: 6px;
-		}
-	}
-
-	&.hvr-icon-forward:before {
-		margin-top: -1px;
-		color: $inner-header;
-		content: '\f0da';
-		right: 0;
-		padding-right: 3px;
 	}
 }
 
