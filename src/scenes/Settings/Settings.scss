@@ -1,0 +1,84 @@
+// colors
+$color-white: #fff;
+$color-title: #0e1a35;
+$color-secondary: #8492af;
+$color-border: #dadee7;
+
+.settings {
+	background-color: $color-white;
+	margin-top: 10px;
+	border: 1px solid $color-border;
+
+	&-header {
+		color: $color-title;
+		padding: 15px 25px;
+		border-bottom: 1px solid $color-border;
+
+		h3 {
+			font-size: 20px;
+			font-weight: 700;
+		}
+
+		p {
+			color: $color-secondary;
+			font-size: 15px;
+		}
+	}
+
+	&-main {
+		padding: 30px;
+
+		@media (min-width: 426px) {
+			width: 70%;
+		}
+
+		.col-form-label {
+			text-align: right;
+			font-weight: 700;
+			color: $color-title;
+
+			@media (max-width: 575px) {
+				text-align: left;
+			}
+		}
+
+		.form-control {
+			max-width: 350px;
+		}
+
+		&-btn {
+			padding-left: 0;
+
+			@media (min-width: 576px) {
+				padding-left: 7px;
+			}
+		}
+
+		.security-item {
+			margin-bottom: 20px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&-title {
+				color: $color-title;
+				font-weight: 600;
+				font-size: 20px;
+			}
+
+			p {
+				font-size: 13px;
+				color: $color-secondary;
+				margin-bottom: 5px;
+			}
+
+			&-link {
+				font-size: 15px;
+				color: $color-title;
+				text-decoration: underline !important;
+				cursor: pointer;
+			}
+		}
+	}
+}

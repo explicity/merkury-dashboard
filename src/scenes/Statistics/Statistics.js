@@ -19,13 +19,13 @@ export default class Statistics extends Component {
 		};
 	}
 
-	updateDataType = value => {
+	updateDataType(value) {
 		this.setState({ activeType: value });
-	};
+	}
 
-	updateDataPerioud = value => {
+	updateDataPerioud(value) {
 		this.setState({ activePerioud: value });
-	};
+	}
 
 	render() {
 		return (

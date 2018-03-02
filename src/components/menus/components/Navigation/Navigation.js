@@ -93,13 +93,13 @@ export default class Navigation extends Component {
 							this.state.isSearchOpen ? 'open' : ''
 						}`}
 					>
-						<MediaQuery minDeviceWidth={510}>
+						<MediaQuery minDeviceWidth={511}>
 							<a className="btn btn-primary">
 								<i className="fa fa-plus" aria-hidden="true" />
 								<span>Add project</span>
 							</a>
 						</MediaQuery>
-						<MediaQuery maxDeviceWidth={511}>
+						<MediaQuery maxDeviceWidth={510}>
 							<button className="header-main-btn">
 								<i className="fa fa-plus" aria-hidden="true" />
 								<span className="sr-only">Add project</span>
