@@ -27,8 +27,8 @@ class SearchBox extends Component {
 		const baseStyles = {
 			open: {
 				width: 150,
-				opacity: 1,
-				visibility: 'visible'
+				visibility: 'visible',
+				opacity: 1
 			},
 
 			closed: {
@@ -43,7 +43,7 @@ class SearchBox extends Component {
 
 		return (
 			<div style={divStyle} className="search-box">
-				<button className="header-main-btn" onClick={this.onClick}>
+				<button className="header-main-btn mr-2" onClick={this.onClick}>
 					<i
 						aria-hidden="true"
 						className={`fa fa-search ${

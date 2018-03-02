@@ -89,8 +89,9 @@ export default class Navigation extends Component {
 					</div>
 
 					<div
-						className={`header-main ${this.state.isSearchOpen &&
-							'open'}`}
+						className={`header-main ${
+							this.state.isSearchOpen ? 'open' : ''
+						}`}
 					>
 						<MediaQuery minDeviceWidth={510}>
 							<a className="btn btn-primary">
