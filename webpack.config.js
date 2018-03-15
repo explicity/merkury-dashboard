@@ -46,6 +46,14 @@ module.exports = {
     })
   ],
 
+  resolve: {
+    // We can now require('file') instead of require('file.jsx')
+    extensions: ["", ".js", ".jsx", ".scss"],
+    alias: {
+      src: path.resolve(__dirname, "../src")
+    }
+  },
+
   devServer: {
     host: "localhost",
     port: port,

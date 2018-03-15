@@ -6,37 +6,37 @@ import MainDropdown from '../../../../../components/dropdown/mainDropdown/MainDr
 import data from './data/lineData.js';
 
 export default class LineChart extends Component {
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.updateData = this.updateData.bind(this);
-		this.state = {
-			name: 'Last Year'
-		};
-	}
+    this.updateData = this.updateData.bind(this);
+    this.state = {
+      name: 'Last Year'
+    };
+  }
 
-	updateData = value => {
-		this.setState({ name: value });
-	};
-	render() {
-		return (
-			<div className="charts">
-				<header className="charts-header">
-					<h3 className="charts-header-title">Report</h3>
-					<MainDropdown
-						action="Perioud"
-						activeTab="Last Year"
-						anotherTab="This Year"
-						updateData={this.updateData}
-					/>
-				</header>
-				{this.state.name === 'Last Year' && (
-					<Line data={data.lastYear} options={data.options} />
+  updateData(value) {
+    this.setState({ name: value });
+  }
+  render() {
+    return (
+      <div className="charts">
+        <header className="charts-header">
+          <h3 className="charts-header-title">Report</h3>
+          <MainDropdown
+            action="Perioud"
+            activeTab="Last Year"
+            anotherTab="This Year"
+            updateData={this.updateData}
+          />
+        </header>
+        {this.state.name === 'Last Year' && (
+        <Line data={data.lastYear} options={data.options} />
 				)}
-				{this.state.name === 'This Year' && (
-					<Line data={data.thisYear} options={data.options} />
+        {this.state.name === 'This Year' && (
+        <Line data={data.thisYear} options={data.options} />
 				)}
-			</div>
-		);
-	}
+      </div>
+    );
+  }
 }

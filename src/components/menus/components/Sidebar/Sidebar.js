@@ -1,9 +1,9 @@
-import "./_sidebar.scss";
+import './_sidebar.scss';
 
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
-import Logo from "./logo.png";
+import Logo from './logo.png';
 
 export default class Sidebar extends Component {
   constructor(props) {
@@ -11,14 +11,14 @@ export default class Sidebar extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: localStorage.currentPage
+      activeTab: localStorage.currentPage,
     };
   }
 
   toggle(tab) {
     if (this.state.activeTab !== tab) {
       this.setState({
-        activeTab: tab
+        activeTab: tab,
       });
       localStorage.currentPage = tab;
     }
@@ -33,7 +33,7 @@ export default class Sidebar extends Component {
               to="/home"
               className="brand-logo"
               onClick={() => {
-                this.toggle("1");
+                this.toggle('1');
               }}
             >
               <img
@@ -51,10 +51,10 @@ export default class Sidebar extends Component {
             <Link
               to="/home"
               className={`sidebar-nav-link ${
-                this.state.activeTab === "1" ? "active " : ""
+                this.state.activeTab === '1' ? 'active ' : ''
               }`}
               onClick={() => {
-                this.toggle("1");
+                this.toggle('1');
               }}
             >
               <i className="fa fa-home fa-fw" aria-hidden="true" />
@@ -65,10 +65,10 @@ export default class Sidebar extends Component {
             <Link
               to="/workflow"
               className={`sidebar-nav-link ${
-                this.state.activeTab === "2" ? "active " : ""
+                this.state.activeTab === '2' ? 'active ' : ''
               }`}
               onClick={() => {
-                this.toggle("2");
+                this.toggle('2');
               }}
             >
               <i className="fa fa-th-large fa-fw" aria-hidden="true" />
@@ -79,10 +79,10 @@ export default class Sidebar extends Component {
             <Link
               to="/statistics"
               className={`sidebar-nav-link ${
-                this.state.activeTab === "3" ? "active " : ""
+                this.state.activeTab === '3' ? 'active ' : ''
               }`}
               onClick={() => {
-                this.toggle("3");
+                this.toggle('3');
               }}
             >
               <i className="fa fa-bolt fa-fw" aria-hidden="true" />
@@ -93,10 +93,10 @@ export default class Sidebar extends Component {
             <Link
               to="/calendar"
               className={`sidebar-nav-link ${
-                this.state.activeTab === "4" ? "active " : ""
+                this.state.activeTab === '4' ? 'active ' : ''
               }`}
               onClick={() => {
-                this.toggle("4");
+                this.toggle('4');
               }}
             >
               <i className="fa fa-calendar fa-fw" aria-hidden="true" />
@@ -107,10 +107,10 @@ export default class Sidebar extends Component {
             <Link
               to="/users"
               className={`sidebar-nav-link ${
-                this.state.activeTab === "5" ? "active " : ""
+                this.state.activeTab === '5' ? 'active ' : ''
               }`}
               onClick={() => {
-                this.toggle("5");
+                this.toggle('5');
               }}
             >
               <i className="fa fa-user-o fa-fw" aria-hidden="true" />
@@ -121,10 +121,10 @@ export default class Sidebar extends Component {
             <Link
               to="/settings"
               className={`sidebar-nav-link ${
-                this.state.activeTab === "6" ? "active " : ""
+                this.state.activeTab === '6' ? 'active ' : ''
               }`}
               onClick={() => {
-                this.toggle("6");
+                this.toggle('6');
               }}
             >
               <i className="fa fa-cog fa-fw" aria-hidden="true" />

@@ -1,21 +1,10 @@
-import './_signup-section.scss';
-
 import React, { Component } from 'react';
-import {
-  TabPane,
-  Nav,
-  NavItem,
-  NavLink,
-  Card,
-  Button,
-  CardTitle,
-  CardText,
-  Row,
-  Col
-} from 'reactstrap';
+
+import { Nav, NavItem, NavLink } from 'reactstrap';
 
 import SignupTabs from './scenes/SignupTabs.js';
 
+import './_signup-section.scss';
 import Logo from './images/logo.png';
 
 export default class Signup extends Component {
