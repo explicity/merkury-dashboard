@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Popover, PopoverBody } from 'reactstrap';
 
@@ -21,15 +22,21 @@ export default class CustomEvent extends Component {
     });
   }
   render() {
+    const { event } = this.props;
+
     return (
       <div>
-        <a href=" " id={`Popover-${this.props.event.id}`} onClick={this.toggle}>
-          {this.props.event.title}
-        </a>
+        <button
+          className="calendar-event"
+          id={`Popover-${event.id}`}
+          onClick={this.toggle}
+        >
+          {event.title}
+        </button>
         <Popover
           placement="right"
           isOpen={this.state.popoverOpen}
-          target={`Popover-${this.props.event.id}`}
+          target={`Popover-${event.id}`}
           toggle={this.toggle}
         >
           <PopoverBody>
@@ -56,19 +63,19 @@ export default class CustomEvent extends Component {
               <ul>
                 <li className="popover-item-list">
                   <span className="popover-description">Title:</span>
-                  <span>{this.props.event.title}</span>
+                  <span>{event.title}</span>
                 </li>
                 <li className="popover-item-list">
                   <span className="popover-description">Starts:</span>
-                  <span>{this.props.event.start.toLocaleTimeString()}</span>
+                  <span>{event.start.toLocaleTimeString()}</span>
                 </li>
                 <li className="popover-item-list">
                   <span className="popover-description">Ends:</span>
-                  <span>{this.props.event.end.toLocaleTimeString()}</span>
+                  <span>{event.end.toLocaleTimeString()}</span>
                 </li>
                 <li className="popover-item-list">
                   <span className="popover-description">Place:</span>
-                  <span>{this.props.event.place}</span>
+                  <span>{event.place}</span>
                 </li>
               </ul>
             </div>
@@ -83,3 +90,13 @@ export default class CustomEvent extends Component {
     );
   }
 }
+
+CustomEvent.propTypes = {
+  event: PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    place: PropTypes.string,
+    start: PropTypes.instanceOf(Date),
+    end: PropTypes.instanceOf(Date)
+  })
+};

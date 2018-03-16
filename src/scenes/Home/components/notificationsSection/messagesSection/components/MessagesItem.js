@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Link } from 'react-router-dom';
 
@@ -59,3 +60,14 @@ export default class MessagesItem extends Component {
     );
   }
 }
+
+MessagesItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number,
+    url: PropTypes.string,
+    user: PropTypes.string,
+    time: PropTypes.string,
+    message: PropTypes.string,
+    unreaded: PropTypes.bool
+  })
+};

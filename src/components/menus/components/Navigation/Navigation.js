@@ -30,7 +30,7 @@ export default class Navigation extends Component {
     };
   }
 
-  toggleSidebar(tab) {
+  toggleSidebar() {
     if (this.state.isSidebarOpen) {
       this.setState({
         isSidebarOpen: !this.state.isSidebarOpen
@@ -70,27 +70,24 @@ export default class Navigation extends Component {
       <header className="header" id="nav">
         <div className="navbar">
           <div className="d-flex align-items-center">
-            <a
+            <button
+              type="button"
               className={`header-main-btn ${
-								this.state.isSidebarOpen
-									? 'hvr-icon-back'
-									: 'hvr-icon-forward'
-							}`}
+                this.state.isSidebarOpen ? 'hvr-icon-back' : 'hvr-icon-forward'
+              }`}
               onClick={this.toggleSidebar}
             >
               <i className="fa fa-bars" aria-hidden="true" />
               <span className="sr-only">Toggle sidebar</span>
-            </a>
+            </button>
             <SearchBox updateData={this.updateData} />
           </div>
 
           <div
-            className={`header-main ${
-							this.state.isSearchOpen ? 'open' : ''
-						}`}
+            className={`header-main ${this.state.isSearchOpen ? 'open' : ''}`}
           >
             <MediaQuery minDeviceWidth={511}>
-              <a className="btn btn-primary">
+              <a href=" " className="btn btn-primary">
                 <i className="fa fa-plus" aria-hidden="true" />
                 <span>Add project</span>
               </a>
@@ -137,12 +134,10 @@ export default class Navigation extends Component {
                   <Link to="/settings">Settings</Link>
                 </DropdownItem>
                 <DropdownItem>
-                  <Link to="" onClick={this.clearStorage}>
-										Log Out
+                  <Link to="/" onClick={this.clearStorage}>
+                    Log Out
                   </Link>
-                  {!this.state.isLoggedIn && (
-                  <Redirect to="/" />
-									)}
+                  {!this.state.isLoggedIn && <Redirect to="/" />}
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>

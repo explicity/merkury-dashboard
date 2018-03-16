@@ -4,6 +4,25 @@ $color-description: #8492af;
 $color-secondary: #0e1a35;
 $color-btn: #5584ff;
 
+.calendar-event {
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	padding-left: 3px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width: -webkit-fill-available;
+	text-align: left;
+	cursor: pointer;
+
+	&:focus {
+		box-shadow: none;
+		outline: none;
+		border: none;
+	}
+}
+
 .popover {
 	&-body {
 		padding: 0;

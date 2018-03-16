@@ -25,7 +25,7 @@ const Routes = () => {
             <Component {...matchProps} />
           </div>
         </div>
-			)}
+      )}
     />
   );
 

@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { TabContent } from 'reactstrap';
 
 import Login from './Login/Login.js';
@@ -25,3 +27,8 @@ export default class SignupTabs extends Component {
     );
   }
 }
+
+SignupTabs.propTypes = {
+  update: PropTypes.func,
+  activeTab: PropTypes.string
+};

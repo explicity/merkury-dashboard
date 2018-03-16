@@ -203,9 +203,7 @@ $font-normal: 500;
 	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 }
-.hvr-icon-back:hover:before,
-.hvr-icon-back:focus:before,
-.hvr-icon-back:active:before {
+.hvr-icon-back:hover:before {
 	-webkit-transform: translateX(-4px);
 	transform: translateX(-4px);
 }
@@ -237,9 +235,7 @@ $font-normal: 500;
 	-webkit-transition-timing-function: ease-out;
 	transition-timing-function: ease-out;
 }
-.hvr-icon-forward:hover:before,
-.hvr-icon-forward:focus:before,
-.hvr-icon-forward:active:before {
+.hvr-icon-forward:hover:before {
 	-webkit-transform: translateX(4px);
 	transform: translateX(4px);
 }

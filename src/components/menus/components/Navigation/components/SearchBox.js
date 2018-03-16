@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { InputGroup, Input } from 'reactstrap';
 
@@ -61,3 +62,7 @@ class SearchBox extends Component {
 }
 
 export default SearchBox;
+
+SearchBox.propTypes = {
+  updateData: PropTypes.func
+};

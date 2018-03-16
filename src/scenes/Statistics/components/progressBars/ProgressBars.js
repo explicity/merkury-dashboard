@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import _map from 'lodash/map';
 
@@ -52,3 +53,15 @@ const ProgressBars = () => (
 );
 
 export default ProgressBars;
+
+ProgressBarsItem.defaultProps = {
+  info: []
+};
+
+ProgressBarsItem.propTypes = {
+  info: PropTypes.shape({
+    description: PropTypes.string,
+    percentages: PropTypes.number,
+    color: PropTypes.string
+  })
+};

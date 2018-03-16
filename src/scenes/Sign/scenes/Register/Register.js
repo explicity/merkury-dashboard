@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { TabPane, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class Register extends Component {
@@ -33,8 +35,7 @@ export default class Register extends Component {
 
   handleInputChange(event) {
     const { target } = event;
-    const value =
-			target.type === 'checkbox' ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const { name } = target;
 
     this.setState({
@@ -62,7 +63,7 @@ export default class Register extends Component {
                 />
               </span>
               <Label for="register-email" hidden>
-								Email
+                Email
               </Label>
               <Input
                 type="email"
@@ -74,13 +75,10 @@ export default class Register extends Component {
             </FormGroup>
             <FormGroup>
               <span>
-                <i
-                  className="fa fa-user-o fa-fw fa-lg"
-                  aria-hidden="true"
-                />
+                <i className="fa fa-user-o fa-fw fa-lg" aria-hidden="true" />
               </span>
               <Label for="register-username" hidden>
-								Username
+                Username
               </Label>
               <Input
                 name="username"
@@ -91,13 +89,10 @@ export default class Register extends Component {
             </FormGroup>
             <FormGroup>
               <span>
-                <i
-                  className="fa fa-lock fa-fw fa-lg"
-                  aria-hidden="true"
-                />
+                <i className="fa fa-lock fa-fw fa-lg" aria-hidden="true" />
               </span>
               <Label for="register-password" hidden>
-								Password
+                Password
               </Label>
               <Input
                 type="password"
@@ -109,13 +104,10 @@ export default class Register extends Component {
             </FormGroup>
             <FormGroup>
               <span>
-                <i
-                  className="fa fa-phone fa-fw fa-lg"
-                  aria-hidden="true"
-                />
+                <i className="fa fa-phone fa-fw fa-lg" aria-hidden="true" />
               </span>
               <Label for="register-number" hidden>
-								Phone number
+                Phone number
               </Label>
               <Input
                 type="tel"
@@ -129,7 +121,7 @@ export default class Register extends Component {
               className="hvr-icon-forward"
               onClick={this.onRegisterPressed}
             >
-							Sign up
+              Sign up
             </Button>
           </Form>
         </div>
@@ -137,3 +129,7 @@ export default class Register extends Component {
     );
   }
 }
+
+Register.propTypes = {
+  update: PropTypes.func
+};

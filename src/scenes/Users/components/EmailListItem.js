@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { Badge } from 'reactstrap';
 
@@ -33,3 +34,18 @@ const EmailListItem = ({ user }) => (
 );
 
 export default EmailListItem;
+
+EmailListItem.defaultProps = {
+  user: []
+};
+
+EmailListItem.propTypes = {
+  user: PropTypes.shape({
+    url: PropTypes.string,
+    name: PropTypes.string,
+    online: PropTypes.bool,
+    activity: PropTypes.string,
+    email: PropTypes.string,
+    phone: PropTypes.number
+  })
+};

@@ -1,8 +1,7 @@
-import './_sidebar.scss';
-
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import './_sidebar.scss';
 import Logo from './logo.png';
 
 export default class Sidebar extends Component {
@@ -11,14 +10,14 @@ export default class Sidebar extends Component {
 
     this.toggle = this.toggle.bind(this);
     this.state = {
-      activeTab: localStorage.currentPage,
+      activeTab: localStorage.currentPage
     };
   }
 
   toggle(tab) {
     if (this.state.activeTab !== tab) {
       this.setState({
-        activeTab: tab,
+        activeTab: tab
       });
       localStorage.currentPage = tab;
     }

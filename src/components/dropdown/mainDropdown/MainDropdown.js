@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import {
   Dropdown,
@@ -74,3 +75,10 @@ export default class MainDropdown extends Component {
     );
   }
 }
+
+MainDropdown.propTypes = {
+  activeTab: PropTypes.string,
+  action: PropTypes.string,
+  updateData: PropTypes.func,
+  anotherTab: PropTypes.string
+};

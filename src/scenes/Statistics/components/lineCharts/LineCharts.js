@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import _map from 'lodash/map';
 
@@ -61,3 +62,17 @@ const LineCharts = () => {
 };
 
 export default LineCharts;
+
+LineChartItem.defaultProps = {
+  data: [],
+  options: []
+};
+
+LineChartItem.propTypes = {
+  data: PropTypes.shape({
+    color: PropTypes.string,
+    description: PropTypes.string,
+    info: PropTypes.objectOf(PropTypes.object)
+  }),
+  options: PropTypes.object
+};
